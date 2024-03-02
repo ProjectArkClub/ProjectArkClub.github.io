@@ -1,0 +1,12 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+addTime.py
+tempCodeRunnerFile.py
+local.txt
+.vscode
+upd_mys.bat
+mys.fs
+build.sh
