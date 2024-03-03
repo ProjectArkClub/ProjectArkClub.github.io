@@ -35,7 +35,9 @@ projectArk: True
 
 
 
-新用户请联系[作者](/index#联系方式)注册<!-- ，并将<a href="https://www.ip138.com">此页面（点击）</a>的IP地址发给作者加入白名单 -->
+新用户请联系[作者](/index#联系方式)注册账号，启动登录器赞助<!-- ，并将<a href="https://www.ip138.com">此页面（点击）</a>的IP地址发给作者加入白名单 -->
+
+![23]({{site.cdn}}/resource/donate_ui.png)
 
 <!-- ![1]({{site.cdn}}/resource/donate.png) -->
 
@@ -60,7 +62,7 @@ projectArk: True
     <TH class="Title" align="center" width=auto>下载线路</TH>
   </TR>
   <TR>
-    <TD class="Item" align="center">ProjectArk 安装包</TD>
+    <TD class="Item" align="center">ProjectArk</TD>
     <TD class="Item" align="center">{{ site.projectArk_version_update }}</TD>
     <TD class="Item" align="center">{{ site.projectArk_version }}</TD>
     <TD class="Item">windows 10/11 专用</TD>
@@ -73,7 +75,7 @@ projectArk: True
     </TD>
   </TR>
   <TR>
-    <TD class="Item" align="center">ProjectArk 安装包</TD>
+    <TD class="Item" align="center">ProjectArk 兼容版</TD>
     <TD class="Item" align="center">{{ site.projectArk_version_update }}</TD>
     <TD class="Item" align="center">{{ site.projectArk_version }}</TD>
     <TD class="Item">windows 全系列</TD>
@@ -129,7 +131,7 @@ projectArk: True
     <TD class="Item" align="center">.NET Framework</TD>
     <TD class="Item" align="center">2019/04/18</TD>
     <TD class="Item" align="center">v4.8</TD>
-    <TD class="Item">安装 .NET 组件修复启动错误</TD>
+    <TD class="Item">安装 .NET 组件修复启动闪退</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
         var cn_url="{{ site.bucket_url }}";
@@ -142,7 +144,7 @@ projectArk: True
     <TD class="Item" align="center">OpenSSL 1.1.1u</TD>
     <TD class="Item" align="center">2016/9/22</TD>
     <TD class="Item" align="center">x86</TD>
-    <TD class="Item">安装 OpenSSL 修复启动错误</TD>
+    <TD class="Item">安装 OpenSSL 修复启动闪退</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
         var cn_url="{{ site.bucket_url }}";
