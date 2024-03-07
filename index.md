@@ -35,6 +35,6 @@ projectArk: True
 <img src="{{site.cdn}}/resource/me.jpg" width="100" height="100">
 
 <p>QQ: 1764193802</p>
-<p>TG: <a href="https://t.me/+0920spznfQZjMjNl">Maybe</a></p>
+<p>TG: <a href="https://t.me/+0920spznfQZjMjNl">Group</a></p>
 <p>Mail: shopperipm@yandex.com</p>
 
