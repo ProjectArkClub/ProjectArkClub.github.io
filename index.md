@@ -8,7 +8,7 @@ projectArk: True
 致力于优化全体驯兽师的数码世界体验
 ## RPG
 - 自动后台答题、重登、变速、强化、扭蛋、找怪、对战、上卡、补卡、捕捉、召唤、进化、捡物、补evp、补buff、副宠复活、兑换、转盘等功能、
-- 支持[宝贝服](https://www.digimonol.com)、服不服、[北美服](https://dro.gameking.com)、[韩服](https://www.digimonrpg.com/Default)
+- 支持[宝贝服](https://www.digimonol.com)、服不服、[北美服](https://dro.gameking.com)、[韩服 (Under maintenance)](https://www.digimonrpg.com/Default)
 
 ## DMO
 - 优化 DMO-CPU 占用至 1%，安静挂机
