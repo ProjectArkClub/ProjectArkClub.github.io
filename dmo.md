@@ -1,7 +1,7 @@
 ---
 layout: default
 title: DMO
-description: DMO 功能教程，适用于北美服、港服、韩服等
+description: DMO 功能教程
 projectArk: True
 ---
 
