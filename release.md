@@ -34,14 +34,6 @@ projectArk: True
 </table>
 
 
-
-<!-- 请联系[作者](/index#联系方式)免费注册账号，登录器中可更改密码 -->
-<!-- ，并将<a href="https://www.ip138.com">此页面（点击）</a>的IP地址发给作者加入白名单 -->
-
-<!-- ![23]({{site.cdn}}/resource/donate_ui.png) -->
-
-<!-- ![1]({{site.cdn}}/resource/donate.png) -->
-
 <!-- projectArk {{ site.projectArk_version }} -->
 <!-- projectArk-VIP {{ site.projectArk_version }} -->
 
