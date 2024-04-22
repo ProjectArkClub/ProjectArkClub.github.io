@@ -26,7 +26,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://ProjectArkClub.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username:  ProjectArkClub
-author: ProjectArkClub
+author: ProjectArk
 owner_name: ProjectArkClub
 owner_url: https://github.com/ProjectArkClub
 cdn: 

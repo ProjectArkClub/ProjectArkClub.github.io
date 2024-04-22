@@ -1,13 +1,13 @@
 ---
 layout: default
 title: 发布
-description: 赞助与下载安装程序
+description: 下载和修复
 projectArk: True
 ---
 
 
 ## 赞助
->注：邀请新用户赞助可获赠 7 天时长
+>注：邀请新用户注册可获赠 7 天时长
 
 <table>
   <tbody>
@@ -45,20 +45,20 @@ projectArk: True
   }
 </script>
 ## 下载地址
-> 选择与自身计算机系统版本匹配的主程序
+> 根据使用的计算机系统版本选择
 <TABLE cellspacing ="1" cellpadding ="6" border = "0">
   <TR>
     <TH class="Title" align="center" width=auto>程序</TH>
     <TH class="Title" align="center" width=auto>更新日期</TH>
     <TH class="Title" align="center" width=auto>版本</TH>
-    <TH class="Title" align="center" width=auto>系统</TH>
+    <TH class="Title" align="center" width=auto>计算机系统</TH>
     <TH class="Title" align="center" width=auto>下载线路</TH>
   </TR>
   <TR>
     <TD class="Item" align="center">ProjectArk</TD>
     <TD class="Item" align="center">{{ site.projectArk_version_update }}</TD>
     <TD class="Item" align="center">{{ site.projectArk_version }}</TD>
-    <TD class="Item">windows 10/11 专用</TD>
+    <TD class="Item">windows 10/11</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
         var cn_url="{{ site.bucket_url }}";
@@ -84,7 +84,7 @@ projectArk: True
 
 
 ## 修复程序
-> 仅在程序无法正常启动时下载安装
+> 程序无法启动或登录时下载安装
 
 <TABLE cellspacing ="1" cellpadding ="6" border = "0">
   <TR>
