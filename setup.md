@@ -38,10 +38,8 @@ projectArk: True
 - 启动失败：请前往下载页面安装全部的修复程序后再次尝试
 
 ## 更新
-- [官网]({{site.cdn}}/release)下载更新
-- 提示有新版后，右键任务栏托盘小图标-检测更新
-
-  ![12]({{site.cdn}}/resource/update_info.png)
+- [官网]({{site.cdn}}/release)下载，替换本地文件夹中程序完成更新
+- 右键屏幕右下角任务栏小图标-检查更新
 
   ![12]({{site.cdn}}/resource/update.png)
 
