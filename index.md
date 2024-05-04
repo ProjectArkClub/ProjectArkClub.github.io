@@ -5,7 +5,6 @@ description: The best auxiliary program for DigimonRPG
 projectArk: True
 ---
 # 简介
-> 致力于优化全体驯兽师的数码世界体验
 
 - 支持自动后台变速、找怪、捡物、皇家寻路、副本寻路、强化+9、转盘、扭蛋、兑换、过答题、断线重连、快速点击道具、锁地图、自动彩卡
   - 对战支持全队攻击、上卡、进化、捕捉、召唤、自动逃跑、自动找活动怪等
@@ -35,9 +34,9 @@ projectArk: True
 
 <img src="{{site.cdn}}/resource/me.jpg" width="100" height="100">
 
-<p><a href="https://t.me/+0920spznfQZjMjNl">Telegram Link</a></p>
+<p>Telegram: <a href="https://t.me/+0920spznfQZjMjNl">Link</a></p>
 <p>QQ: 1764193802</p>
-<p>Mail: shopperipm@yandex.com</p>
+<!-- <p>Mail: shopperipm@yandex.com</p> -->
 
 ## 免责声明
 本软件完全出于个人兴趣爱好，由本人在业余时间开发，是一款安全，绿色，可靠的软件产品，仅用于科研学习、程序架构设计、软件工程技术研究场景。
