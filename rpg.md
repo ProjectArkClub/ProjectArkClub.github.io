@@ -1,32 +1,27 @@
 ---
 layout: default
 title: RPG
-description: 功能说明
+description: 游戏功能教程
 projectArk: True
 ---
 
 # RPG
-> 版本: v4.643
+> 版本: v4.668
 >
-> 更新日期: 2024.05.04
+> 更新日期: 2024.7.14
 
 - [RPG](#rpg)
   - [菜单](#菜单)
   - [主页](#主页)
   - [配置](#配置)
   - [BUFF](#buff)
-  - [常见问题](#常见问题)
 
-## 简介
-- 支持自动后台变速、找怪、捡物、皇家寻路、副本寻路、强化+9、转盘、扭蛋、兑换、过答题、断线重连、快速点击道具、锁地图、自动彩卡
-  - 对战支持全队攻击、上卡、进化、捕捉、召唤、自动逃跑、自动找活动怪等
-  - 战后支持全背包补卡、回复evp、补buff、副宠复活等
-
+## 基础设置
 初次使用请阅读 <A href="/setup">基础设置说明</A>
 
 ## 菜单
 
-- 右键屏幕右下角任务栏小图标，打开菜单：
+- 右键系统托盘，唤出菜单：
 
   ![12]({{site.cdn}}/resource/taskbar.png)
 
@@ -34,7 +29,7 @@ projectArk: True
 
   ![12]({{site.cdn}}/resource/rpg_version.png)
 
-- 时长：各功能到期时间
+- 时长：
 
   ![12]({{site.cdn}}/resource/rpg_time.png)
 

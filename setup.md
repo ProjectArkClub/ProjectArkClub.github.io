@@ -9,26 +9,16 @@ projectArk: True
 
 
 ## 环境设置
-
-- 系统缩放：100%，[设置方法](https://jingyan.baidu.com/article/c85b7a642cd5f6413bac95b7.html)
-- 防火墙：卸载非 windows 的**全部杀毒软件、软件管家**，添加系统防火墙白名单
+- 防火墙：卸载非 windows 的**全部杀毒软件、软件管家**，添加本程序至系统防火墙白名单
+- [系统缩放](https://jingyan.baidu.com/article/c85b7a642cd5f6413bac95b7.html)：100%
 
 ## 启动
-- 新建文件夹，解压并运行 ProjectArk.exe
-- 登录界面：
-  - 定制版: 安全性更强
-  - 护盾1: 建议开启此护盾避免其他游戏误检测，需要关闭 Secure Boot
-  - 护盾2: 增强防检测，需要关闭 Secure Boot
-  - 注：私服不需要，若勾选后程序无法启动或系统蓝屏则勿开启
-- 注册：自助注册，时长自动到账，扫码切忌超时
-- 赞助：到期后自行赞助，时长自动到账，扫码切忌超时
+- 解压本程序至新文件夹中并运行
+- 注册：自助注册，时长自动到账，切忌扫码超时
+- 赞助：到期后自行赞助，时长自动到账，切忌扫码超时
 - 更改：修改账号密码
   
   ![23]({{site.cdn}}/resource/ark_login.png)
-
-<!-- - 主界面：
-
-  ![12]({{site.cdn}}/resource/main.png) -->
 
 - 时长查询：
 
@@ -48,9 +38,9 @@ projectArk: True
   ![12]({{site.cdn}}/resource/set.png)
 
 ## 快捷键
-- 左键小图标：隐藏/显示 ProjectArk
+- 左键小图标：隐藏/显示本程序
 - ctrl-s: 保存参数配置
-- ctrl-w: 关闭 ProjectArk
+- ctrl-w: 关闭本程序
 
 <!-- - 自定义快捷键：修改配置文件中相关内容
 
