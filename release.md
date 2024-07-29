@@ -122,14 +122,14 @@ projectArk: True
   </TR>
   <TR>
     <TD class="Item" align="center">.NET Framework</TD>
-    <TD class="Item" align="center">2019/04/18</TD>
-    <TD class="Item" align="center">v4.8</TD>
+    <TD class="Item" align="center">2024/07/09</TD>
+    <TD class="Item" align="center">v8.0.7</TD>
     <TD class="Item">安装 .NET 组件修复启动闪退</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
         var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/ndp48-web.exe\">国内</a>, <a href=\""+git_url+"/ndp48-web.exe\">国际</a>");
+        document.write("<a href=\""+cn_url+"/dotnet-runtime-8.0.7-win-x64.exe\">国内</a>, <a href=\""+git_url+"/dotnet-runtime-8.0.7-win-x64.exe\">国际</a>");
       </script>
     </TD>
   </TR>
