@@ -55,7 +55,7 @@ projectArk: True
     <TH class="Title" align="center" width=auto>下载线路</TH>
   </TR>
   <TR>
-    <TD class="Item" align="center">ProjectArk</TD>
+    <TD class="Item" align="center">主程序</TD>
     <TD class="Item" align="center">{{ site.projectArk_version_update }}</TD>
     <TD class="Item" align="center">{{ site.projectArk_version }}</TD>
     <TD class="Item">windows 10/11</TD>
@@ -68,7 +68,7 @@ projectArk: True
     </TD>
   </TR>
   <TR>
-    <TD class="Item" align="center">ProjectArk 兼容版</TD>
+    <TD class="Item" align="center">兼容版</TD>
     <TD class="Item" align="center">{{ site.projectArk_version_update }}</TD>
     <TD class="Item" align="center">{{ site.projectArk_version }}</TD>
     <TD class="Item">windows 全系列</TD>

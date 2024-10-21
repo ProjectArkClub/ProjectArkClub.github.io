@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ProjectArk
-description: The best auxiliary program for DigimonRPG
+description: The best auxiliary program for DigimonRPG (Private Server Only)
 projectArk: True
 ---
 # 简介
@@ -10,25 +10,6 @@ projectArk: True
   - 对战支持自动全队攻击、上卡、进化、捕捉、召唤、逃跑、找活动怪、PVP等
   - 战后支持自动全背包补卡、回复EVP、补BUFF、副宠复活等
 
-<!-- ## DMO
-- 优化 DMO-CPU 占用至 1%，安静挂机
-- 自动隐藏+动态切换 DMO 窗口，避免 DMO 窗口干扰电脑其他活动
-- 完全关闭最顶层 DMO 窗口，避免 DMO 进程残留
-- 优化弯刀使用体验
-    - 弯刀崩溃关闭后自动重开弯刀（仅支持单开弯刀）
-    - 避免弯刀重登DMO引发的机器蓝屏问题
-    - 弯刀重连自动开启无动作
-- Colo 自动快速召唤至任意层， 普通 Colo 单票约节省 5 分钟 -->
-<!--     - 指定层停止并转入 DATS 参与战斗 -->
-<!-- - 自动后台登录账号、断线重连，批量自动更新 DMO 客户端 -->
-
-<!--  
-- 自动截胡 Decode-II 扭蛋机，**仅限北美服**
-    - 功能：一键后台托管，支持断线重连
-    - 出货率：dcode2:hbu5 出货率约为 1.2:1
-    - 出货量：hbu5 每日出货量约为 60~100
--->
-
 
 ## 联系方式
 
@@ -36,7 +17,6 @@ projectArk: True
 
 <p>Telegram: <a href="https://t.me/+0920spznfQZjMjNl">Link</a></p>
 <p>QQ: 1764193802</p>
-<!-- <p>Mail: shopperipm@yandex.com</p> -->
 
 <!-- ## 免责声明
 本软件完全出于个人兴趣爱好，由本人在业余时间开发，是一款安全，绿色，可靠的软件产品，仅用于科研学习、程序架构设计、软件工程技术研究场景。
