@@ -41,7 +41,7 @@ projectArk: True
 <script>
   function myfunction(){
     var url="{{ site.bucket_url }}";
-    document.write("<a href=\""+url+"/projectArk_installer.exe\">projectArk</a>");
+    document.write("<a href=\""+url+"/setup.exe\">projectArk</a>");
   }
 </script>
 ## 下载地址
@@ -63,7 +63,7 @@ projectArk: True
       <script type="text/javascript">
         var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/win11/ProjectArk_Installer.exe\">国内</a>, <a href=\""+git_url+"/win11/ProjectArk_Installer.exe\">国际</a>");
+        document.write("<a href=\""+cn_url+"/win11/setup.exe\">国内</a>, <a href=\""+git_url+"/win11/setup.exe\">国际</a>");
       </script>
     </TD>
   </TR>
@@ -76,7 +76,7 @@ projectArk: True
       <script type="text/javascript">
         var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/win7/ProjectArk_Installer.exe\">国内</a>, <a href=\""+git_url+"/win7/ProjectArk_Installer.exe\">国际</a>");
+        document.write("<a href=\""+cn_url+"/win7/setup.exe\">国内</a>, <a href=\""+git_url+"/win7/setup.exe\">国际</a>");
       </script>
     </TD>
   </TR>
