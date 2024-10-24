@@ -1,7 +1,7 @@
 ---
 layout: default
-title: ProjectArk
-description: The best auxiliary program for DigimonRPG (Private Server Only)
+title: 数码宝贝RPG助手
+description: 仅限私服 (Private Server Only)
 projectArk: True
 ---
 # 简介
