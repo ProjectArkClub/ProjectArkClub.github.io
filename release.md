@@ -45,6 +45,7 @@ projectArk: True
   }
 </script>
 ## 下载地址
+<!-- 备用下载源（腾讯COS，原"国内"线路）: {{ site.bucket_url }} ，文件路径与下表一致 -->
 > 根据使用的计算机系统版本选择
 <TABLE cellspacing ="1" cellpadding ="6" border = "0">
   <TR>
@@ -62,8 +63,7 @@ projectArk: True
     <TD class="Item" align="center">
       <script type="text/javascript">
         var git_url="{{ site.fastgit_url }}";
-        var cn_url="{{ site.bucket_url }}";
-        document.write("<a href=\""+git_url+"/win11/setup.exe\">下载</a>, <a href=\""+cn_url+"/win11/setup.exe\">备用</a>");
+        document.write("<a href=\""+git_url+"/win11/setup.exe\">下载</a>");
       </script>
     </TD>
   </TR>
@@ -75,8 +75,7 @@ projectArk: True
     <TD class="Item" align="center">
       <script type="text/javascript">
         var git_url="{{ site.fastgit_url }}";
-        var cn_url="{{ site.bucket_url }}";
-        document.write("<a href=\""+git_url+"/win7/setup.exe\">下载</a>, <a href=\""+cn_url+"/win7/setup.exe\">备用</a>");
+        document.write("<a href=\""+git_url+"/win7/setup.exe\">下载</a>");
       </script>
     </TD>
   </TR>
@@ -102,8 +101,7 @@ projectArk: True
     <TD class="Item" align="center">
       <script type="text/javascript">
         var git_url="{{ site.fastgit_url }}";
-        var cn_url="{{ site.bucket_url }}";
-        document.write("<a href=\""+git_url+"/VC_redist_2015-2022.x64.exe\">下载</a>, <a href=\""+cn_url+"/VC_redist_2015-2022.x64.exe\">备用</a>");
+        document.write("<a href=\""+git_url+"/VC_redist_2015-2022.x64.exe\">下载</a>");
       </script>
     </TD>
   </TR>
@@ -115,8 +113,7 @@ projectArk: True
     <TD class="Item" align="center">
       <script type="text/javascript">
         var git_url="{{ site.fastgit_url }}";
-        var cn_url="{{ site.bucket_url }}";
-        document.write("<a href=\""+git_url+"/VC_redist_2015-2022.x86.exe\">下载</a>, <a href=\""+cn_url+"/VC_redist_2015-2022.x86.exe\">备用</a>");
+        document.write("<a href=\""+git_url+"/VC_redist_2015-2022.x86.exe\">下载</a>");
       </script>
     </TD>
   </TR>
@@ -128,8 +125,7 @@ projectArk: True
     <TD class="Item" align="center">
       <script type="text/javascript">
         var git_url="{{ site.fastgit_url }}";
-        var cn_url="{{ site.bucket_url }}";
-        document.write("<a href=\""+git_url+"/dotnet-runtime-8.0.7-win-x64.exe\">下载</a>, <a href=\""+cn_url+"/dotnet-runtime-8.0.7-win-x64.exe\">备用</a>");
+        document.write("<a href=\""+git_url+"/dotnet-runtime-8.0.7-win-x64.exe\">下载</a>");
       </script>
     </TD>
   </TR>
@@ -141,8 +137,7 @@ projectArk: True
     <TD class="Item" align="center">
       <script type="text/javascript">
         var git_url="{{ site.fastgit_url }}";
-        var cn_url="{{ site.bucket_url }}";
-        document.write("<a href=\""+git_url+"/Win32OpenSSL_Light-1_1_1u.exe\">下载</a>, <a href=\""+cn_url+"/Win32OpenSSL_Light-1_1_1u.exe\">备用</a>");
+        document.write("<a href=\""+git_url+"/Win32OpenSSL_Light-1_1_1u.exe\">下载</a>");
       </script>
     </TD>
   </TR>
