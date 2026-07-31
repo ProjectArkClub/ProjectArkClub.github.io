@@ -52,7 +52,7 @@ projectArk: True
     <TH class="Title" align="center" width=auto>更新日期</TH>
     <TH class="Title" align="center" width=auto>版本</TH>
     <TH class="Title" align="center" width=auto>计算机系统</TH>
-    <TH class="Title" align="center" width=auto>下载线路</TH>
+    <TH class="Title" align="center" width=auto>链接</TH>
   </TR>
   <TR>
     <TD class="Item" align="center">主程序</TD>
@@ -61,9 +61,9 @@ projectArk: True
     <TD class="Item">windows 10/11</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
-        var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/win11/setup.exe\">国内</a>, <a href=\""+git_url+"/win11/setup.exe\">国际</a>");
+        var cn_url="{{ site.bucket_url }}";
+        document.write("<a href=\""+git_url+"/win11/setup.exe\">下载</a>, <a href=\""+cn_url+"/win11/setup.exe\">备用</a>");
       </script>
     </TD>
   </TR>
@@ -74,9 +74,9 @@ projectArk: True
     <TD class="Item">windows 全系列</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
-        var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/win7/setup.exe\">国内</a>, <a href=\""+git_url+"/win7/setup.exe\">国际</a>");
+        var cn_url="{{ site.bucket_url }}";
+        document.write("<a href=\""+git_url+"/win7/setup.exe\">下载</a>, <a href=\""+cn_url+"/win7/setup.exe\">备用</a>");
       </script>
     </TD>
   </TR>
@@ -92,7 +92,7 @@ projectArk: True
     <TH class="Title" align="center" width=auto>更新日期</TH>
     <TH class="Title" align="center" width=auto>版本</TH>
     <TH class="Title" align="center" width=auto>说明</TH>
-    <TH class="Title" align="center" width=auto>下载线路</TH>
+    <TH class="Title" align="center" width=auto>链接</TH>
   </TR>
   <TR>
     <TD class="Item" align="center">VC++ 2015-2022</TD>
@@ -101,9 +101,9 @@ projectArk: True
     <TD class="Item">安装 VC++ 运行库修复启动错误</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
-        var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/VC_redist_2015-2022.x64.exe\">国内</a>, <a href=\""+git_url+"/VC_redist_2015-2022.x64.exe\">国际</a>");
+        var cn_url="{{ site.bucket_url }}";
+        document.write("<a href=\""+git_url+"/VC_redist_2015-2022.x64.exe\">下载</a>, <a href=\""+cn_url+"/VC_redist_2015-2022.x64.exe\">备用</a>");
       </script>
     </TD>
   </TR>
@@ -114,9 +114,9 @@ projectArk: True
     <TD class="Item">安装 VC++ 运行库修复启动错误</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
-        var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/VC_redist_2015-2022.x86.exe\">国内</a>, <a href=\""+git_url+"/VC_redist_2015-2022.x86.exe\">国际</a>");
+        var cn_url="{{ site.bucket_url }}";
+        document.write("<a href=\""+git_url+"/VC_redist_2015-2022.x86.exe\">下载</a>, <a href=\""+cn_url+"/VC_redist_2015-2022.x86.exe\">备用</a>");
       </script>
     </TD>
   </TR>
@@ -127,9 +127,9 @@ projectArk: True
     <TD class="Item">安装 .NET 组件修复启动闪退</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
-        var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/dotnet-runtime-8.0.7-win-x64.exe\">国内</a>, <a href=\""+git_url+"/dotnet-runtime-8.0.7-win-x64.exe\">国际</a>");
+        var cn_url="{{ site.bucket_url }}";
+        document.write("<a href=\""+git_url+"/dotnet-runtime-8.0.7-win-x64.exe\">下载</a>, <a href=\""+cn_url+"/dotnet-runtime-8.0.7-win-x64.exe\">备用</a>");
       </script>
     </TD>
   </TR>
@@ -140,9 +140,9 @@ projectArk: True
     <TD class="Item">安装 OpenSSL 修复启动闪退</TD>
     <TD class="Item" align="center">
       <script type="text/javascript">
-        var cn_url="{{ site.bucket_url }}";
         var git_url="{{ site.fastgit_url }}";
-        document.write("<a href=\""+cn_url+"/Win32OpenSSL_Light-1_1_1u.exe\">国内</a>, <a href=\""+git_url+"/Win32OpenSSL_Light-1_1_1u.exe\">国际</a>");
+        var cn_url="{{ site.bucket_url }}";
+        document.write("<a href=\""+git_url+"/Win32OpenSSL_Light-1_1_1u.exe\">下载</a>, <a href=\""+cn_url+"/Win32OpenSSL_Light-1_1_1u.exe\">备用</a>");
       </script>
     </TD>
   </TR>

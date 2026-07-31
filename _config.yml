@@ -35,7 +35,7 @@ cdn:
 # cdn: https://jsd.cdn.zzko.cn/gh/ProjectArkClub/Resource
 # cdn: https://cdn.jsdelivr.net/gh/ProjectArkClub/ProjectArkClub.github.io
 # cdn: https://fastgit.projectark.vip/https://raw.githubusercontent.com/ProjectArkClub/ProjectArkClub.github.io/main/
-fastgit_url: https://fastgit.projectark.vip/https://raw.githubusercontent.com/ProjectArkClub/Download/main/
+fastgit_url: https://global.digimon.pro/Download
 bucket_url: https://download-projectark-1258640941.cos.ap-shanghai.myqcloud.com
 google_analytics: G-Q0B9W70VGJ
 projectArk: False
