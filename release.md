@@ -6,32 +6,8 @@ projectArk: True
 ---
 
 
-## 赞助
 >注：邀请新用户注册可获赠 7 天时长
 
-<table>
-  <tbody>
-    <tr>
-      <td>50元</td>
-      <td>135元</td>
-      <td>255元</td>
-      <td>480元</td>
-    </tr>
-    <tr>
-      <td>30天</td>
-      <td>90天</td>
-      <td>180天</td>
-      <td>360天</td>
-    </tr>
-  </tbody>
-  <colgroup>
-    <col>
-    <col>
-    <col>
-    <col>
-    <col>
-  </colgroup>
-</table>
 
 
 <!-- projectArk {{ site.projectArk_version }} -->
