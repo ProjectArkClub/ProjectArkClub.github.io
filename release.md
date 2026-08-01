@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 发布
+title: 下载
 description: 下载和修复
 projectArk: True
 ---

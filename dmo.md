@@ -6,9 +6,6 @@ projectArk: True
 ---
 
 # DMO
-> 版本: v3.00
->
-> 更新日期: 2023.6.20
 
 - [DMO](#dmo)
     - [PreLoad](#preload)
@@ -34,7 +31,7 @@ projectArk: True
 - 不勾选 RPG、DATS、Hide、Hbu5、Top 可以加快 projectArk 程序启动速度
 - 界面：
 
-  ![12]({{site.cdn}}/resource/PreLoad.png)
+  ![PreLoad 标签选择]({{site.cdn}}/resource/PreLoad.png)
 
 ### Hbu5
 > 游戏分辨率设置: 1024x768
@@ -56,7 +53,7 @@ projectArk: True
 
 - 界面:
   
-  ![12]({{site.cdn}}/resource/Colo.png)
+  ![Colo 竞技场设置]({{site.cdn}}/resource/Colo.png)
 - 功能：快速竞技场
 - 使用说明
   - 参数设置
@@ -85,7 +82,7 @@ projectArk: True
 - 参数设置
   - Config 页面：隐藏 DMO 和优化 DMO 进程 CPU 占用
 
-     ![23]({{site.cdn}}/resource/hide.png)
+     ![Hide 模式设置]({{site.cdn}}/resource/hide.png)
     - hide: 是否隐藏 DMO 及其他窗口
 
           0: 不隐藏
@@ -127,7 +124,7 @@ projectArk: True
   - 只支持守护单个弯刀脚本 
 - 界面：
 
-  ![12]({{site.cdn}}/resource/DATS.png)
+  ![DATS 设置]({{site.cdn}}/resource/DATS.png)
 
 ##### BSoDGuard
 - 防止 dats 断线重连时可能导致的电脑蓝屏问题
@@ -163,7 +160,7 @@ projectArk: True
 - 字段
   - Configure 页面
 
-    ![11]({{site.cdn}}/resource/login.png)
+    ![登录设置]({{site.cdn}}/resource/login.png)
 
         - 从上往下依次是账号、密码、二级密码、启动路径
         - 启动路径示例：E:\GameKing\GDMO\GDMO.exe
@@ -201,7 +198,7 @@ projectArk: True
 
 - 界面：
 
-  ![12]({{site.cdn}}/resource/Mail.png)
+  ![Mail 邮件设置]({{site.cdn}}/resource/Mail.png)
 - 核心功能：
   - 后台批量登陆账号，自动领取邮件、活动登录奖励等
   - 支持空号自动创建一个随机ID、随机角色、随机数码兽
@@ -217,7 +214,7 @@ projectArk: True
 - 账号信息
   - excel 打开 set 文件夹下的 account.csv 文件，按照示例填写账号信息
   - 示例：
-  ![12]({{site.cdn}}/resource/account.png)
+  ![账号管理]({{site.cdn}}/resource/account.png)
 - 使用方法：
   - 填写账号信息
   - 勾选需要执行的功能

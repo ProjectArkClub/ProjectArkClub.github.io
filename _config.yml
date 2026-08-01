@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Anonymous
+title: 数码宝贝RPG助手
 email: 
 # description: >- # this means to ignore newlines until "baseurl:"
 #   A world full of creation
@@ -45,6 +45,9 @@ projectArk_update_version: v3.7.9.0
 
 # Build settings
 theme: minima
+kramdown:
+  parse_block_html: true
+
 plugins:
   - jekyll-feed
 
