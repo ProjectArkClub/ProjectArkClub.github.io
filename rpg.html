@@ -6,33 +6,34 @@ projectArk: True
 permalink: /rpg
 ---
 
+<h1 class="page-h1">RPG 教程</h1>
+
 <div class="doc-wrap">
   <aside class="toc-side toc" id="toc">
+    <span class="toc-group-label">界面</span>
     <ul>
-    <li><a href="#base">基础设置</a></li>
-    <li><a href="#menu">菜单</a></li>
-    <li><a href="#home">主页</a>
-      <ul class="sub">
-        <li><a href="#find">找怪 / 寻路</a></li>
-        <li><a href="#card">上卡</a></li>
-        <li><a href="#summon">召唤</a></li>
-        <li><a href="#catch">捕捉</a></li>
-        <li><a href="#battle">战斗</a></li>
-        <li><a href="#evp">回复 EVP</a></li>
-        <li><a href="#pick">捡物</a></li>
-        <li><a href="#exchange">兑换</a></li>
-        <li><a href="#speed">变速优化</a></li>
-      </ul>
-    </li>
-    <li><a href="#config">配置</a></li>
-    <li><a href="#buff">BUFF</a></li>
-  </ul>
+      <li><a href="#menu">菜单<small>托盘 / 版本 / 时长</small></a></li>
+      <li><a href="#home">主页<small>九大功能</small></a>
+        <ul class="sub">
+          <li><a href="#find">找怪 / 寻路</a></li>
+          <li><a href="#card">上卡</a></li>
+          <li><a href="#summon">召唤</a></li>
+          <li><a href="#catch">捕捉</a></li>
+          <li><a href="#battle">战斗</a></li>
+          <li><a href="#evp">回复 EVP</a></li>
+          <li><a href="#pick">捡物</a></li>
+          <li><a href="#exchange">兑换</a></li>
+          <li><a href="#speed">变速优化</a></li>
+        </ul>
+      </li>
+    </ul>
+    <span class="toc-group-label">设置</span>
+    <ul>
+      <li><a href="#config">配置<small>登录 / 界面 / 强化</small></a></li>
+      <li><a href="#buff">BUFF<small>自动加状态</small></a></li>
+    </ul>
   </aside>
   <div class="doc-body">
-
-    <h2 id="base">基础设置</h2>
-
-    <p>初次使用请阅读<a class="btn-link" href="/setup">基础设置说明</a></p>
 
     <h2 id="menu">菜单</h2>
 
@@ -95,12 +96,10 @@ permalink: /rpg
                           <li>自动识别野怪、跑图，需准确选择数码兽名字，注意区分爆裂模式</li>
                           <li>“自动RB”系列为自动寻路，可从<strong>关键路径</strong>中任意位置开始自动跑至该房终点</li>
                           <li>开关：寻路中切至“暂停”可暂停寻路；切至“启用”则继续寻路</li>
-                          <li><strong>新手重点注意</strong>：
-                            <ul>
-                              <li>若野怪关键部位被各种特效、人物、数码兽、地形等<strong>遮挡</strong>，则无法识别</li>
-                              <li>建议：f10 屏蔽其他人、减少特效、成长期出战，选择地形遮挡较少、人少的点位</li>
-                            </ul>
-                          </li>
+                          <div class="callout callout--warn">
+                            <span class="ico">!</span>
+                            <div><strong>新手重点注意</strong>：若野怪关键部位被各种特效、人物、数码兽、地形等<strong>遮挡</strong>，则无法识别。建议：f10 屏蔽其他人、减少特效、成长期出战，选择地形遮挡较少、人少的点位。</div>
+                          </div>
                         </ul>
 
                         <h3 id="card">上卡</h3>
@@ -146,16 +145,16 @@ permalink: /rpg
                         </ul>
 
                         <figure class="shot">
-                          <p><img src="/resource/select_item.png" alt="自定义捡物列表" />
-  <img src="/resource/select_item_2.png" alt="自定义捡物列表（续）" /></p>
-                          <figcaption>
-                            <figcaption>自定义捡物列表</figcaption>
-</figure>
+                          <img src="/resource/select_item.png" alt="自定义捡物列表" />
+                          <img src="/resource/select_item_2.png" alt="自定义捡物列表（续）" />
+                          <figcaption>自定义捡物列表</figcaption>
+                        </figure>
 
-                            <ul>
-                              <li>无法捡物原因 1：机器<strong>高 CPU 负载</strong>时无法捡物，可取消勾选不需要捡的道具缓解，并勾选“低性能模式”</li>
-                              <li>无法捡物原因 2：英文服存在多种字体，请根据捡物日志中显示的已拾取道具名第一个字母是否是特殊符号来判定机器的字体型号，确保自定义捡物列表中存在待拾取的道具且勾选</li>
-                            </ul>
+                            <div class="callout callout--warn">
+                              <span class="ico">!</span>
+                              <div><strong>无法捡物原因 1</strong>：机器<strong>高 CPU 负载</strong>时无法捡物，可取消勾选不需要捡的道具缓解，并勾选“低性能模式”。<br>
+                              <strong>无法捡物原因 2</strong>：英文服存在多种字体，请根据捡物日志中显示的已拾取道具名第一个字母是否是特殊符号来判定机器的字体型号，确保自定义捡物列表中存在待拾取的道具且勾选。</div>
+                            </div>
 
                             <h3 id="exchange">兑换</h3>
 

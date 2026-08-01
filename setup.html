@@ -1,19 +1,25 @@
 ---
 layout: default
-title: 使用说明
+title: 安装说明
 description: 安装、注册教程
 projectArk: True
 permalink: /setup
 ---
 
+<h1 class="page-h1">安装说明</h1>
+
 <div class="doc-wrap">
 <aside class="toc-side toc" id="toc">
+  <span class="toc-group-label">基础</span>
   <ul>
-    <li><a href="#env">环境设置</a></li>
-    <li><a href="#start">启动</a></li>
-    <li><a href="#update">更新</a></li>
-    <li><a href="#config">多配置切换</a></li>
-    <li><a href="#hotkey">快捷键</a></li>
+    <li><a href="#env">环境设置<small>杀软 / 系统缩放</small></a></li>
+  </ul>
+  <span class="toc-group-label">使用</span>
+  <ul>
+    <li><a href="#start">启动<small>注册 · 赞助 · 时长</small></a></li>
+    <li><a href="#update">更新<small>手动 / 自动</small></a></li>
+    <li><a href="#config">多配置切换<small>多开配置</small></a></li>
+    <li><a href="#hotkey">快捷键<small>隐藏 · 保存 · 退出</small></a></li>
   </ul>
 </aside>
 <div class="doc-body">
@@ -21,7 +27,10 @@ permalink: /setup
 <h2 id="env">环境设置</h2>
 
 <ul>
-  <li>防火墙：卸载非 windows 的<strong>全部杀毒软件、软件管家</strong>，添加本程序至系统防火墙白名单</li>
+  <div class="callout callout--warn">
+    <span class="ico">!</span>
+    <div><strong>重要</strong>：卸载非 windows 的<strong>全部杀毒软件、软件管家</strong>，并将本程序添加至系统防火墙白名单，否则可能无法运行。</div>
+  </div>
   <li>系统缩放：<a href="https://jingyan.baidu.com/article/c85b7a642cd5f6413bac95b7.html">设置方法</a> —— 需设为 <strong>100%</strong></li>
 </ul>
 
@@ -36,7 +45,7 @@ permalink: /setup
 
 <figure class="shot">
   <img src="{{site.cdn}}/resource/ark_login.png" alt="登录注册界面">
-  <figcaption>登录 / 注册 / 修改账号</figcaption>
+  <figcaption>登录注册界面</figcaption>
 </figure>
 
 <ul>
@@ -48,7 +57,10 @@ permalink: /setup
   <figcaption>查询剩余时长</figcaption>
 </figure>
 
-<p>启动失败：请前往<a href="{{site.cdn}}/release">下载</a>页面安装全部的修复程序后再次尝试</p>
+<div class="callout">
+  <span class="ico">i</span>
+  <div>启动失败：请前往<a href="{{site.cdn}}/release">下载</a>页面安装全部的修复程序后再次尝试。</div>
+</div>
 
 <h2 id="update">更新</h2>
 

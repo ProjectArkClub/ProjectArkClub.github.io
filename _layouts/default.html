@@ -5,12 +5,12 @@
 
 {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0d2b2e">
+    <meta name="theme-color" content="#0d1117">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
     {% include head-custom.html %}
   </head>
-  <body>
+  <body class="{{ page.body_class }}">
 
     <a id="skip-to-content" href="#content">跳到内容</a>
 
@@ -19,24 +19,18 @@
       <div class="nav-links">
         <a href="/">介绍</a>
         <a href="/release">下载</a>
-        <a href="/setup">使用说明</a>
+        <a href="/setup">安装说明</a>
         <a href="/rpg">RPG教程</a>
       </div>
-      <span class="ver-badge">{{ site.projectArk_version }}</span>
     </nav>
-
-    {% if page.projectArk %}
-    <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-    </header>
-    {% endif %}
 
     <main id="content" class="main-content" role="main">
       {{ content }}
 
       <footer class="site-footer">
-        <p class="copyright">Copyright &copy; 2021-{{ site.time | date: '%Y' }} ❖ All Rights Reserved.</p>
+        <p class="copyright">版权所有 &copy; 2021-{{ site.time | date: '%Y' }} ❖ 保留所有权利</p>
       </footer>
     </main>
+    <script src="{{ '/assets/js/reveal.js' | relative_url }}"></script>
   </body>
 </html>
