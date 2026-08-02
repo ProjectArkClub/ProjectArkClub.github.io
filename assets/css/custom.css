@@ -452,7 +452,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 /* 下载双卡 + 通用信息行 */
 .dl-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 14px;
   margin: 18px 0 0;
 }
@@ -496,9 +496,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   font-size: 12.5px;
   margin: 12px 0 0;
 }
-@media (max-width: 720px) {
-  .dl-grid { grid-template-columns: 1fr; }
-}
+
 
 
 /* 首页：标题去分割线 + 联系方式横排 */
@@ -524,7 +522,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 
 /* 子页内容区标题（无横幅，与正文同背景） */
 .main-content .page-h1 {
-  font-size: 42px;
+  font-size: clamp(30px, 5vw, 42px);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -536,11 +534,16 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 /* release 页：标题无分割线 + 版本右对齐小字 */
 .release .main-content h2 { border-bottom: none; padding-bottom: 4px; }
 .dl-verline {
-  text-align: right;
-  font-size: 13px;
-  color: var(--text-3);
-  margin: 4px 0 14px;
+  text-align: center;
+  margin: 8px 0 16px;
 }
+.dl-ver-name { font-size: 13px; color: var(--text-2); }
+.dl-ver-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.dl-ver-date { font-size: 12px; color: var(--text-3); }
 
 /* 联系方式福利胶囊 */
 .contact-gift {
@@ -562,9 +565,11 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 
 /* release 副标题 */
 .page-sub {
-  font-size: 15px;
-  color: var(--text-2);
+  font-size: 17px;
+  color: var(--text);
+  font-weight: 500;
   text-align: center;
+  line-height: 1.65;
   margin: 4px 0 0;
 }
 
@@ -635,4 +640,21 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 .fix-inner { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .fix-body { transition: none; }
+}
+
+/* 单列/手机：卡片变紧凑横条（标题左、按钮右） */
+@media (max-width: 660px) {
+  .dl-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: auto;
+    padding: 16px 20px;
+  }
+  .dl-card .btn-dl { margin: 0; }
+  /* 单列横条：徽章改左上角镶嵌（双列时在右上角） */
+  .dl-card--primary .dl-badge {
+    right: auto;
+    left: 20px;
+  }
 }
