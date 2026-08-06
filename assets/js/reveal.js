@@ -11,7 +11,7 @@
   }
 
   // 2. 滚动显现（reveal）：首屏/卡片/截图/侧栏错峰淡入
-  var targets = document.querySelectorAll('.hero, .feature, .shot, .toc-side, .dl-card, .fix-card');
+  var targets = document.querySelectorAll('.hero, .feature, .shot, .dl-card, .fix-card');
   if (targets.length) {
     if (!('IntersectionObserver' in window) || reduce) {
       targets.forEach(function (el) { el.classList.add('in'); });
