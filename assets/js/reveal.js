@@ -64,10 +64,15 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSide(); });
   }
 
-  // 5. 窄屏导航自适应：顶栏内容溢出时隐藏品牌（并触发链接区单行滚动兜底）
+  // 5. 窄屏导航自适应：顶栏换行时隐藏品牌（品牌隐藏后链接区 nowrap + 横向滚动兜底）
+  //    flex-wrap 下 scrollWidth 测不出溢出,改为检测链接区是否被挤到第二行
+  var navLinks = document.querySelector('.nav-links');
   function fitNav() {
-    if (!topbar) return;
-    topbar.classList.toggle('hide-brand', topbar.scrollWidth > topbar.clientWidth + 1);
+    if (!topbar || !navLinks) return;
+    var padTop = parseFloat(getComputedStyle(topbar).paddingTop) || 0;
+    var contentTop = topbar.getBoundingClientRect().top + padTop;
+    var wrapped = navLinks.getBoundingClientRect().top > contentTop + 4;
+    topbar.classList.toggle('hide-brand', wrapped);
   }
   window.addEventListener('resize', fitNav, { passive: true });
   fitNav();
