@@ -64,17 +64,22 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSide(); });
   }
 
-  // 5. 窄屏导航自适应：链接区折行时隐藏品牌（品牌隐藏后链接区 nowrap + 横向滚动兜底）
-  //    .nav-links 高度自动包裹内容,scrollHeight 恒等于 clientHeight 测不出换行;
-  //    折行会体现在 <a> 的 top 出现多个值,据此判定(实测验证)
+  // 5. 窄屏导航自适应：内容放不下时隐藏品牌（品牌隐藏后链接区 nowrap + 横向滚动兜底）
   var navLinks = document.querySelector('.nav-links');
+  var brand = document.querySelector('.brand');
   function fitNav() {
-    if (!topbar || !navLinks) return;
-    var as = navLinks.querySelectorAll('a');
-    var wrapped = as.length > 1 &&
-      Math.round(as[0].getBoundingClientRect().top) !==
-      Math.round(as[as.length - 1].getBoundingClientRect().top);
-    topbar.classList.toggle('hide-brand', wrapped);
+    if (!topbar || !navLinks || !brand) return;
+    // 临时强制"品牌可见 + 单行"测量自然总宽:与品牌当前显示状态完全解耦,
+    // 滚动/地址栏触发的 resize 重测结果一致,不会振荡
+    var d = brand.style.display;
+    var f1 = topbar.style.flexWrap, f2 = navLinks.style.flexWrap, o = navLinks.style.overflowX;
+    brand.style.display = 'inline';
+    topbar.style.flexWrap = navLinks.style.flexWrap = 'nowrap';
+    navLinks.style.overflowX = 'visible';
+    var overflow = topbar.scrollWidth > topbar.clientWidth + 1;
+    brand.style.display = d;
+    topbar.style.flexWrap = f1; navLinks.style.flexWrap = f2; navLinks.style.overflowX = o;
+    topbar.classList.toggle('hide-brand', overflow);
   }
   window.addEventListener('resize', fitNav, { passive: true });
   fitNav();
