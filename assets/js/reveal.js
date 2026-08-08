@@ -64,22 +64,17 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSide(); });
   }
 
-  // 5. 窄屏导航自适应：内容放不下时隐藏品牌（品牌隐藏后链接区 nowrap + 横向滚动兜底）
+  // 5. 窄屏导航自适应：链接区换行则隐藏品牌（隐藏后链接区 nowrap + 横向滚动兜底）
   var navLinks = document.querySelector('.nav-links');
-  var brand = document.querySelector('.brand');
   function fitNav() {
-    if (!topbar || !navLinks || !brand) return;
-    // 临时强制"品牌可见 + 单行"测量自然总宽:与品牌当前显示状态完全解耦,
-    // 滚动/地址栏触发的 resize 重测结果一致,不会振荡
-    var d = brand.style.display;
-    var f1 = topbar.style.flexWrap, f2 = navLinks.style.flexWrap, o = navLinks.style.overflowX;
-    brand.style.display = 'inline';
-    topbar.style.flexWrap = navLinks.style.flexWrap = 'nowrap';
-    navLinks.style.overflowX = 'visible';
-    var overflow = topbar.scrollWidth > topbar.clientWidth + 1;
-    brand.style.display = d;
-    topbar.style.flexWrap = f1; navLinks.style.flexWrap = f2; navLinks.style.overflowX = o;
-    topbar.classList.toggle('hide-brand', overflow);
+    if (!topbar || !navLinks) return;
+    // 先恢复品牌可见再检测:判定基于"品牌可见"的真实换行状态,任何时机重测结论一致
+    topbar.classList.remove('hide-brand');
+    var as = navLinks.querySelectorAll('a');
+    var wrapped = as.length > 1 &&
+      Math.round(as[0].getBoundingClientRect().top) !==
+      Math.round(as[as.length - 1].getBoundingClientRect().top);
+    topbar.classList.toggle('hide-brand', wrapped);
   }
   window.addEventListener('resize', fitNav, { passive: true });
   fitNav();
