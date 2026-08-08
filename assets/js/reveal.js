@@ -64,14 +64,16 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSide(); });
   }
 
-  // 5. 窄屏导航自适应：顶栏换行时隐藏品牌（品牌隐藏后链接区 nowrap + 横向滚动兜底）
-  //    flex-wrap 下 scrollWidth 测不出溢出,改为检测链接区是否被挤到第二行
+  // 5. 窄屏导航自适应：链接区折行时隐藏品牌（品牌隐藏后链接区 nowrap + 横向滚动兜底）
+  //    .nav-links 高度自动包裹内容,scrollHeight 恒等于 clientHeight 测不出换行;
+  //    折行会体现在 <a> 的 top 出现多个值,据此判定(实测验证)
   var navLinks = document.querySelector('.nav-links');
   function fitNav() {
     if (!topbar || !navLinks) return;
-    var padTop = parseFloat(getComputedStyle(topbar).paddingTop) || 0;
-    var contentTop = topbar.getBoundingClientRect().top + padTop;
-    var wrapped = navLinks.getBoundingClientRect().top > contentTop + 4;
+    var as = navLinks.querySelectorAll('a');
+    var wrapped = as.length > 1 &&
+      Math.round(as[0].getBoundingClientRect().top) !==
+      Math.round(as[as.length - 1].getBoundingClientRect().top);
     topbar.classList.toggle('hide-brand', wrapped);
   }
   window.addEventListener('resize', fitNav, { passive: true });
