@@ -176,6 +176,9 @@ body {
 @media (max-width: 720px) {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .topbar { flex-wrap: wrap; gap: 10px; padding: 10px 14px; }
+  /* 自适应:溢出时(JS 加 hide-brand)隐藏品牌,链接区单行横向滚动兜底 */
+  .topbar.hide-brand .brand { display: none; }
+  .topbar.hide-brand .nav-links { flex-wrap: nowrap; overflow-x: auto; }
   .project-name { font-size: 24px; }
 }
 @media (max-width: 480px) {

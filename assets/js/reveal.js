@@ -63,4 +63,12 @@
     sidePanel.addEventListener('click', function (e) { if (e.target.closest('a')) closeSide(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSide(); });
   }
+
+  // 5. 窄屏导航自适应：顶栏内容溢出时隐藏品牌（并触发链接区单行滚动兜底）
+  function fitNav() {
+    if (!topbar) return;
+    topbar.classList.toggle('hide-brand', topbar.scrollWidth > topbar.clientWidth + 1);
+  }
+  window.addEventListener('resize', fitNav, { passive: true });
+  fitNav();
 })();
