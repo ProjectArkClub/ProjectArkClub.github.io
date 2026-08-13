@@ -16,12 +16,13 @@
 
     <nav class="topbar" role="navigation">
       <button class="sidebar-toggle" aria-label="打开目录">&#9776;</button>
-      <span class="brand"><a href="/">数码宝贝助手</a></span>
+      <a class="brand" href="/"><img class="brand-logo" src="{{ '/favicon.ico' | relative_url }}" alt="" width="20" height="20">数码宝贝助手</a>
       <div class="nav-links">
-        <a href="/">介绍</a>
-        <a href="/release">下载</a>
         <a href="/setup">安装说明</a>
         <a href="/rpg">RPG教程</a>
+      </div>
+      <div class="nav-actions">
+        <a class="nav-cta" href="/release">下载 {{ site.projectArk_version }}</a>
       </div>
     </nav>
 
@@ -32,6 +33,8 @@
         <p class="copyright">版权所有 &copy; 2021-{{ site.time | date: '%Y' }} ❖ 保留所有权利</p>
       </footer>
     </main>
+    <script src="{{ '/assets/js/fluid-bg.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/grid-field.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/reveal.js' | relative_url }}"></script>
   </body>
 </html>

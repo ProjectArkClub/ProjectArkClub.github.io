@@ -2,6 +2,14 @@
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // 0. 特性检测:CSS.registerProperty 可用才启用"旋转渐变边框"(DeepSeek rotating-border 同款)
+  if (window.CSS && typeof CSS.registerProperty === 'function') {
+    try {
+      CSS.registerProperty({ name: '--border-angle', syntax: '<angle>', inherits: false, initialValue: '0deg' });
+      document.documentElement.classList.add('css-property');
+    } catch (e) { /* 不支持则静默跳过,旋转边框不启用 */ }
+  }
+
   // 1. 导航滚动加深
   var topbar = document.querySelector('.topbar');
   if (topbar) {
@@ -10,8 +18,8 @@
     onNav();
   }
 
-  // 2. 滚动显现（reveal）：首屏/卡片/截图/侧栏错峰淡入
-  var targets = document.querySelectorAll('.hero, .feature, .shot, .dl-card, .fix-card');
+  // 2. 滚动显现（reveal）：卡片/截图/侧栏错峰淡入（hero 由 CSS rise-in 入场，不再参与）
+  var targets = document.querySelectorAll('.feature, .shot, .dl-card, .fix-card, .cta-final');
   if (targets.length) {
     if (!('IntersectionObserver' in window) || reduce) {
       targets.forEach(function (el) { el.classList.add('in'); });
@@ -78,4 +86,11 @@
   }
   window.addEventListener('resize', fitNav, { passive: true });
   fitNav();
+
+  // 6. 导航当前页高亮（DeepSeek 同款 active 指示，按 pathname 判定）
+  var path = window.location.pathname.replace(/\/+$/, '') || '/';
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    var href = (a.getAttribute('href') || '/').replace(/\/+$/, '') || '/';
+    if (path === href || (href !== '/' && path.indexOf(href) === 0)) a.classList.add('active');
+  });
 })();
