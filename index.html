@@ -31,10 +31,9 @@ permalink: /
     <span>2026 版已正式发布 · 面向全球用户大幅提升网络可达性 · 更多功能与优化进行中，欢迎测试与反馈</span>
       </div>
       <h1>数码宝贝 RPG<br><span class="title-accent">自动助手</span></h1>
-      <p class="hero-sub">探索未至之境，自动挂机从此刻开始</p>
+      <p class="hero-sub">把挂机交给它，把冒险留给你</p>
       <div class="hero-cta">
-        <a class="btn-download" href="/release">立即下载 {{ site.projectArk_version }}</a>
-        <span class="hero-meta">Windows 10 / 11 · 更新于 {{ site.projectArk_version_update }}</span>
+        <a class="btn-download" href="/#download">立即下载 {{ site.projectArk_version }}</a>
       </div>
     </div>
     <aside class="hero-card">
@@ -100,13 +99,63 @@ permalink: /
     </div>
   </div>
 
-  <div class="cta-final" id="contact">
+  <div class="cta-final" id="download">
     <canvas class="fluid-bg" data-fluid-colors="#0A1424,#122A4A,#1B3E75,#2D5F9E,#0D1117" data-fluid-speed="80" data-fluid-scale="1.7" data-fluid-grain="0"></canvas>
     <div class="cta-inner">
       <h2>准备好开始你的数码世界之旅了吗？</h2>
-      <p class="cta-sub">免费下载 · 注册即用 · 稳定挂机</p>
-      <a class="btn-download" href="/release">立即下载 {{ site.projectArk_version }}</a>
-      <div class="cta-contact">
+      <p class="cta-verline">{{ site.projectArk_version }} · 更新于 {{ site.projectArk_version_update }}</p>
+      <div class="dl-grid">
+        <div class="dl-card dl-card--primary">
+          <div>
+            <span class="dl-badge">推荐</span>
+            <span class="dl-title">Windows 10 / 11</span>
+          </div>
+          <div class="dl-actions">
+            <a class="btn-dl" href="{{ site.fastgit_url }}/win11/dot.exe">下载正式版</a>
+            <a class="btn-dl btn-dl--ghost btn-dl--beta" href="{{ site.fastgit_url }}/win11/dot-beta.exe" aria-label="下载 Beta 版">
+              <span class="beta-dot" aria-hidden="true"></span>Beta 版
+            </a>
+          </div>
+        </div>
+        <div class="dl-card">
+          <span class="dl-title">Windows 7 及之前的版本</span>
+          <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/win7/dot.exe">下载</a>
+        </div>
+      </div>
+      <details class="fix-details">
+        <summary>
+          <span class="fix-sub">若程序闪退，请点我下载修复程序 <span class="fix-arrow">&#9662;</span></span>
+        </summary>
+        <div class="fix-body">
+          <div class="fix-inner">
+            <div class="fix-grid">
+              <div class="fix-card">
+                <span class="dl-kicker">VC++ 2015-2022</span>
+                <p class="fix-desc">安装 VC++ 运行库修复启动错误</p>
+                <div class="fix-actions">
+                  <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/VC_redist_2015-2022.x64.exe">x64 下载</a>
+                  <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/VC_redist_2015-2022.x86.exe">x86 下载</a>
+                </div>
+              </div>
+              <div class="fix-card">
+                <span class="dl-kicker">.NET Framework</span>
+                <p class="fix-desc">安装 .NET 组件修复启动闪退</p>
+                <div class="fix-actions">
+                  <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/dotnet-runtime-8.0.7-win-x64.exe">v8.0.7 下载</a>
+                </div>
+              </div>
+              <div class="fix-card">
+                <span class="dl-kicker">OpenSSL</span>
+                <p class="fix-desc">安装 OpenSSL 修复启动闪退</p>
+                <div class="fix-actions">
+                  <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/Win32OpenSSL_Light-1_1_1u.exe">1.1.1u 下载</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+      <div class="cta-contact" id="contact">
         <img src="{{ site.cdn }}/resource/me.jpg" width="44" height="44" alt="作者头像">
         <span>Telegram: <a href="https://t.me/+0920spznfQZjMjNl">Link</a></span>
         <span>QQ: 1764193802</span>

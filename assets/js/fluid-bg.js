@@ -7,7 +7,7 @@
              data-fluid-scale="1.6"    ← 图案缩放
              data-fluid-grain="0"></canvas>  ← 颗粒强度(0~0.01)
    特性:30fps 节流 / DPR≤1.5 / IntersectionObserver 离屏暂停 /
-         prefers-reduced-motion 或无 WebGL2 时隐藏 canvas,露出 CSS 底色兜底 */
+         无 WebGL2 时隐藏 canvas,露出 CSS 底色兜底 */
 (function () {
   'use strict';
 
@@ -129,7 +129,6 @@
 
   function init(canvas) {
     if (!canvas || canvas.dataset.fluidInit) return;
-    var staticMode = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var gl = null;
     try {
       gl = canvas.getContext('webgl2', { alpha: true, premultipliedAlpha: false, antialias: false, powerPreference: 'low-power' });
@@ -211,13 +210,7 @@
       raf = requestAnimationFrame(frame);
     }
 
-    /* prefers-reduced-motion：保留设计，仅渲染一帧静态画面，不做动画 */
-    if (staticMode) {
-      resize();
-      render(t0);
-      return;
-    }
-
+    /* 离屏暂停:IntersectionObserver */
     var io = new IntersectionObserver(function (entries) {
       if (entries[0].isIntersecting && !visible) { visible = true; last = 0; raf = requestAnimationFrame(frame); }
       else if (!entries[0].isIntersecting) { visible = false; cancelAnimationFrame(raf); }

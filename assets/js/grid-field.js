@@ -1,13 +1,12 @@
 /* ProjectArk 首页 Hero 互动点阵 —— 借鉴 DeepSeek 官网 hero 背景(2026-08 分析落地)
    - 90px 网格点 + 弹簧回位 + 鼠标斥力 + 近邻连线
-   - 30fps 节流 / DPR≤2 / 离屏暂停 / 静止自动停帧 / 触屏禁用 / reduced-motion 禁用 */
+   - 30fps 节流 / DPR≤2 / 离屏暂停 / 静止自动停帧 / 触屏禁用 */
 (function () {
   'use strict';
 
   var canvas = document.querySelector('.hero-field');
   if (!canvas || !canvas.getContext) return;
-  var staticMode = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!staticMode && window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
 
   var ctx = canvas.getContext('2d');
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -132,12 +131,6 @@
       cancelAnimationFrame(raf);
     }
   }, { threshold: 0 });
-
-  if (staticMode) {
-    rebuild();          /* prefers-reduced-motion：静态网格一帧，保留设计 */
-    draw();
-    return;
-  }
 
   rebuild();
   io.observe(canvas);

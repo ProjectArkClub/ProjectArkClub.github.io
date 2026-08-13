@@ -403,9 +403,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 .feature { transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease); }
 .feature:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); border-color: rgba(79, 157, 255, 0.4); }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
+/* 站点动效始终开启（按站主意愿不再做 prefers-reduced-motion 降级） */
 
 /* ============ reasonix docs 借鉴 ============ */
 /* 1. 侧栏贴视口全高独立滚动（仅桌面；窄屏抽屉不受限高约束） */
@@ -645,10 +643,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   .dl-actions .btn-dl { padding: 8px 16px; font-size: 13px; }
 }
 
-/* 减少动态效果偏好:停止呼吸动画 */
-@media (prefers-reduced-motion: reduce) {
-  .btn-dl--beta .beta-dot { animation: none; }
-}
+/* 减少动态效果偏好:停止呼吸动画（已停用降级，动画始终开启） */
 
 
 
@@ -791,9 +786,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 }
 .fix-details[open] .fix-body { grid-template-rows: 1fr; }
 .fix-inner { overflow: hidden; }
-@media (prefers-reduced-motion: reduce) {
-  .fix-body { transition: none; }
-}
+/* 展开动画（降级已停用，动画始终开启） */
 
 /* 单列/手机：卡片变紧凑横条（标题左、按钮右） */
 @media (max-width: 660px) {
@@ -881,12 +874,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   to   { --border-angle: 360deg; }
 }
 
-/* 5. 减少动态效果：关闭新增动画（旋转环保留静态展示） */
-@media (prefers-reduced-motion: reduce) {
-  .sparkle, .sparkle .sparkle-sm { animation: none; }
-  .css-property .btn-download::after,
-  .css-property .dl-card--primary::after { animation: none; }
-}
+/* 5. 动画降级已停用：星标与旋转环始终播放 */
 
 /* ============================================================
    首页 v2：DeepSeek 同构（全屏流动背景 + 左文右卡 + 序号卡 + 大 CTA）
@@ -964,7 +952,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 .hero-copy .hero-cta { animation: rise-in 1s cubic-bezier(0.44, 0, 0.56, 1) 0.35s backwards; }
 .hero-card           { animation: rise-in 1s cubic-bezier(0.44, 0, 0.56, 1) 0.30s backwards; }
 
-/* 标题品牌蓝渐变强调(两行标题的第二行,字号 1.15 倍作焦点词)+ 按钮旁版本小字 */
+/* 标题品牌蓝渐变强调(两行标题的第二行,字号 1.15 倍作焦点词) */
 .title-accent {
   font-size: 1.15em;
   background: linear-gradient(92deg, #4f9dff 0%, #9ecbff 55%, #6fb0ff 100%);
@@ -978,12 +966,6 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   align-items: flex-start;
   gap: 12px;
   margin-top: 26px;
-}
-.hero-meta {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-3);
-  letter-spacing: 0.03em;
 }
 
 /* 右侧邀请文字卡（DeepSeek join 卡同构：卡内流动背景 + 上浮 + 背景缩放） */
@@ -1082,7 +1064,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   background: linear-gradient(180deg, #0e1e3a 0%, #0a1424 70%, #0d1117 100%);
   box-shadow: var(--shadow-2);
   text-align: center;
-  scroll-margin-top: 24px;
+  scroll-margin-top: 90px;
 }
 .cta-final canvas.fluid-bg {
   position: absolute;
@@ -1142,11 +1124,7 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   .cta-contact { gap: 12px; }
 }
 
-/* 减少动态效果：关闭入场动画 */
-@media (prefers-reduced-motion: reduce) {
-  .hero-announce, .hero-copy h1, .hero-copy .hero-sub,
-  .hero-copy .hero-cta, .hero-card { animation: none; }
-}
+/* 入场动画降级已停用：rise-in 级联始终播放 */
 
 /* ============================================================
    导航 v2：对齐 DeepSeek（hero 顶部保护层 + 下划线动效 + 右侧版本/CTA）
@@ -1228,6 +1206,9 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   border-color: rgba(79, 157, 255, 0.18);
   box-shadow: 0 10px 30px rgba(4, 8, 16, 0.4);
 }
+/* 首页导航不再需要下载按钮：下载枢纽已并入首页 CTA（其他页面保留） */
+.home .nav-actions { display: none; }
+
 /* 窄屏：胶囊允许折行，圆角降级为圆角长条（网格节奏在小屏不强制） */
 @media (max-width: 480px) {
   .home .topbar {
@@ -1238,6 +1219,29 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
     justify-content: center;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .home .topbar { transition: none; }
+/* 导航变形动画始终开启 */
+
+/* ============================================================
+   下载枢纽 CTA：玻璃下载卡 + 修复折叠 + 联系行（首页末尾）
+   ============================================================ */
+.cta-final .cta-verline {
+  margin: 2px 0 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+  letter-spacing: 0.03em;
+}
+.cta-final .dl-grid { width: 100%; margin: 14px 0 0; }
+.cta-final .fix-details { width: 100%; }
+/* 卡中卡玻璃化：让流体背景透出，层次为 流体底 → 玻璃卡 → 按钮 */
+.cta-final .dl-card,
+.cta-final .fix-card {
+  background: rgba(22, 27, 34, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-color: rgba(79, 157, 255, 0.22);
+}
+.cta-final .dl-card--primary {
+  background: linear-gradient(180deg, rgba(79, 157, 255, 0.16), rgba(22, 27, 34, 0.5) 80%);
+  border-color: rgba(79, 157, 255, 0.35);
 }

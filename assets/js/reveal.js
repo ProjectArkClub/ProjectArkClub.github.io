@@ -1,7 +1,5 @@
 /* ProjectArk 站点动效：滚动显现 + 导航加深 + 卡片光晕 + 窄屏抽屉 */
 (function () {
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   // 0. 特性检测:CSS.registerProperty 可用才启用"旋转渐变边框"(DeepSeek rotating-border 同款)
   if (window.CSS && typeof CSS.registerProperty === 'function') {
     try {
@@ -21,7 +19,7 @@
   // 2. 滚动显现（reveal）：卡片/截图/侧栏错峰淡入（hero 由 CSS rise-in 入场，不再参与）
   var targets = document.querySelectorAll('.feature, .shot, .dl-card, .fix-card, .cta-final');
   if (targets.length) {
-    if (!('IntersectionObserver' in window) || reduce) {
+    if (!('IntersectionObserver' in window)) {
       targets.forEach(function (el) { el.classList.add('in'); });
     } else {
       var io = new IntersectionObserver(function (entries) {
