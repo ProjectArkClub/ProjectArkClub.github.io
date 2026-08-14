@@ -639,8 +639,9 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 
 /* 窄屏(卡片横条)时按钮收窄 */
 @media (max-width: 660px) {
-  .dl-actions { gap: 8px; }
-  .dl-actions .btn-dl { padding: 8px 16px; font-size: 13px; }
+  .dl-actions { gap: 6px; }
+  .dl-actions .btn-dl { padding: 7px 10px; font-size: 13px; }
+  .btn-dl--beta .beta-dot { margin-right: 3px; }
 }
 
 /* 减少动态效果偏好:停止呼吸动画（已停用降级，动画始终开启） */
@@ -788,20 +789,25 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
 .fix-inner { overflow: hidden; }
 /* 展开动画（降级已停用，动画始终开启） */
 
-/* 单列/手机：卡片变紧凑横条（标题左、按钮右） */
+/* 单列/手机：卡片变紧凑横条（标题左、按钮右，440px 一行放下） */
 @media (max-width: 660px) {
   .dl-card {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     min-height: auto;
-    padding: 16px 20px;
+    padding: 14px 12px;
+    gap: 10px;
   }
   .dl-card .btn-dl { margin: 0; }
+  /* 标题禁折行、不被压缩；空间不足时按钮组折行兜底 */
+  .dl-title { font-size: 15px; white-space: nowrap; }
+  .dl-card > div:first-child,
+  .dl-card > .dl-title { flex-shrink: 0; }
   /* 单列横条：徽章改左上角镶嵌（双列时在右上角） */
   .dl-card--primary .dl-badge {
     right: auto;
-    left: 20px;
+    left: 12px;
   }
 }
 
