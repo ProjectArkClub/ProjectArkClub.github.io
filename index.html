@@ -13,6 +13,7 @@ permalink: /
     <canvas class="fluid-bg" data-fluid-colors="#0A1424,#122A4A,#1B3E75,#2D5F9E,#0D1117" data-fluid-speed="80" data-fluid-scale="1.5" data-fluid-grain="0"></canvas>
   </div>
   <canvas class="hero-field" aria-hidden="true"></canvas>
+  <canvas class="hero-logo-field" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <div class="hero-copy">
       <div class="hero-announce">
@@ -98,83 +99,25 @@ permalink: /
       <p>屏蔽键盘输入，提升高倍率变速实际效果</p>
     </div>
   </div>
-
-  <div class="cta-final" id="download">
-    <canvas class="fluid-bg" data-fluid-colors="#0A1424,#122A4A,#1B3E75,#2D5F9E,#0D1117" data-fluid-speed="80" data-fluid-scale="1.7" data-fluid-grain="0"></canvas>
-    <div class="cta-inner">
-      <h2>准备好开始你的数码世界之旅了吗？</h2>
-      <p class="cta-verline">{{ site.projectArk_version }} · 更新于 {{ site.projectArk_version_update }}</p>
-      <div class="dl-grid">
-        <div class="dl-card dl-card--primary">
-          <div>
-            <span class="dl-badge">推荐</span>
-            <span class="dl-title">Windows 10 / 11</span>
-          </div>
-          <div class="dl-actions">
-            <a class="btn-dl" href="{{ site.fastgit_url }}/win11/dot.exe">下载正式版</a>
-            <a class="btn-dl btn-dl--ghost btn-dl--beta" href="{{ site.fastgit_url }}/win11/dot-beta.exe" aria-label="下载 Beta 版">
-              <span class="beta-dot" aria-hidden="true"></span>Beta 版
-            </a>
-          </div>
-        </div>
-        <div class="dl-card">
-          <span class="dl-title">Windows 7 及之前的版本</span>
-          <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/win7/dot.exe">下载</a>
-        </div>
-      </div>
-      <details class="fix-details">
-        <summary>
-          <span class="fix-sub">若程序闪退，请点我下载修复程序 <span class="fix-arrow">&#9662;</span></span>
-        </summary>
-        <div class="fix-body">
-          <div class="fix-inner">
-            <div class="fix-grid">
-              <div class="fix-card">
-                <span class="dl-kicker">VC++ 2015-2022</span>
-                <p class="fix-desc">安装 VC++ 运行库修复启动错误</p>
-                <div class="fix-actions">
-                  <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/VC_redist_2015-2022.x64.exe">x64 下载</a>
-                  <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/VC_redist_2015-2022.x86.exe">x86 下载</a>
-                </div>
-              </div>
-              <div class="fix-card">
-                <span class="dl-kicker">.NET Framework</span>
-                <p class="fix-desc">安装 .NET 组件修复启动闪退</p>
-                <div class="fix-actions">
-                  <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/dotnet-runtime-8.0.7-win-x64.exe">v8.0.7 下载</a>
-                </div>
-              </div>
-              <div class="fix-card">
-                <span class="dl-kicker">OpenSSL</span>
-                <p class="fix-desc">安装 OpenSSL 修复启动闪退</p>
-                <div class="fix-actions">
-                  <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/Win32OpenSSL_Light-1_1_1u.exe">1.1.1u 下载</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </details>
-      <div class="cta-contact" id="contact">
-        <img src="{{ site.cdn }}/resource/me.jpg" width="44" height="44" alt="作者头像">
-        <span>Telegram: <a href="https://t.me/+0920spznfQZjMjNl">Link</a></span>
-        <span>QQ: 1764193802</span>
-        <span class="contact-gift">🎁 邀请新用户完成注册后，邀请者联系作者领取 7 天奖励时长</span>
-      </div>
-    </div>
-  </div>
 </div>
 
-<!--
-## 免责声明
-
-本软件完全出于个人兴趣爱好，由本人在业余时间开发，是一款安全，绿色，可靠的软件产品，仅用于科研学习、程序架构设计、软件工程技术研究场景。
-
-本软件绝对不针对任何一款游戏或者游戏开发商，如果有人利用本软件进行非法游戏活动，本人将保留追究其民事以及刑事责任的权利。
-
-因使用本软件而引致的任何意外、疏忽、合约毁坏、诽谤、版权或知识产权侵犯及其所造成的任何损失，本人概不负责，亦概不承担任何民事或刑事法律责任。
-
-当你第一次开始使用本人所提供的任何软件及资源的那一刻起就将被视为对本声明全部内容的认可。同时您必须认可上述免责条款，方可使用本软件及资源。如有任何异议，建议立刻删除本软件并且停止使用。
-
-**以上内容，本人保留最终解释权。**
--->
+<div class="cta-final" id="download">
+  <div class="cta-scene" aria-hidden="true"><canvas class="cta-logo-field"></canvas></div>
+  <div class="cta-dots-wrap" aria-hidden="true">
+    <div class="cta-dots-mask">
+      <canvas class="cta-field"></canvas>
+    </div>
+    <span class="g1"></span><span class="g2"></span><span class="g3"></span>
+  </div>
+  <div class="cta-inner">
+    <h2>冒险越来越深入</h2>
+    <p class="cta-verline">{{ site.projectArk_version }} · 更新于 {{ site.projectArk_version_update }}</p>
+    <div class="cta-actions">
+      <a class="btn-dl" href="{{ site.fastgit_url }}/win11/dot.exe"><span class="dl-badge-cta">推荐</span><svg class="btn-dl-icon" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5v8.2m0 0L4.9 6.6M8 9.7l3.1-3.1M2.5 13.6h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="btn-dl-label"><span class="btn-dl-main">下载正式版</span><span class="btn-dl-sub">Win10 / 11</span></span></a>
+      <a class="btn-dl btn-dl--beta" href="{{ site.fastgit_url }}/win11/dot-beta.exe" aria-label="下载 Beta 版"><svg class="btn-dl-icon" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.2C8.2 3.8 8.8 5.8 10.5 7.1C11.5 7.9 12.8 8.2 14.8 8.4C12.8 8.6 11.5 8.9 10.5 9.7C8.8 11 8.2 13 8 15.6C7.8 13 7.2 11 5.5 9.7C4.5 8.9 3.2 8.6 1.2 8.4C3.2 8.2 4.5 7.9 5.5 7.1C7.2 5.8 7.8 3.8 8 1.2Z" fill="currentColor"/></svg><span class="btn-dl-label"><span class="btn-dl-main">Beta 版</span><span class="btn-dl-sub">提前体验</span></span></a>
+      <a class="btn-dl btn-dl--ghost" href="{{ site.fastgit_url }}/win7/dot.exe"><svg class="btn-dl-icon" width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.6" y="2.8" width="12.8" height="8.6" rx="1.4" stroke="currentColor" stroke-width="1.3"/><path d="M5.6 14.6h4.8M8 11.4v3.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg><span class="btn-dl-label"><span class="btn-dl-main">兼容版</span><span class="btn-dl-sub">Win7 及之前</span></span></a>
+    </div>
+    <p class="cta-fix">程序闪退？下载运行库：<a href="{{ site.fastgit_url }}/VC_redist_2015-2022.x64.exe" rel="noopener">VC++ x64</a> · <a href="{{ site.fastgit_url }}/VC_redist_2015-2022.x86.exe" rel="noopener">VC++ x86</a> · <a href="{{ site.fastgit_url }}/dotnet-runtime-8.0.7-win-x64.exe" rel="noopener">.NET 8.0.7</a> · <a href="{{ site.fastgit_url }}/Win32OpenSSL_Light-1_1_1u.exe" rel="noopener">OpenSSL 1.1.1u</a></p>
+  </div>
+</div>
+</div>

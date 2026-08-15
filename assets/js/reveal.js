@@ -17,25 +17,37 @@
   }
 
   // 2. 滚动显现（reveal）：卡片/截图/侧栏错峰淡入（hero 由 CSS rise-in 入场，不再参与）
-  var targets = document.querySelectorAll('.feature, .shot, .dl-card, .fix-card, .cta-final');
+  //    实现为滚动/缩放时的 rect 检查 + load 后兜底定时，不依赖 IntersectionObserver
+  //    （Tauri WebView2 等环境曾出现 IO 不触发导致内容永久 opacity:0 的问题）
+  var targets = document.querySelectorAll('.feature, .shot, .dl-card, .fix-card, .cta-inner, .cta-dots-wrap, .nf-inner');
   if (targets.length) {
-    if (!('IntersectionObserver' in window)) {
-      targets.forEach(function (el) { el.classList.add('in'); });
-    } else {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      targets.forEach(function (el, i) {
-        el.classList.add('reveal');
-        el.style.setProperty('--d', Math.min(i % 6 * 60, 300) + 'ms');
-        io.observe(el);
+    var pendingReveals = [];
+    targets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.setProperty('--d', Math.min(i % 6 * 60, 300) + 'ms');
+      pendingReveals.push(el);
+    });
+    function checkReveals() {
+      var vh = window.innerHeight || 800;
+      pendingReveals = pendingReveals.filter(function (el) {
+        if (el.classList.contains('in')) return false;
+        var r = el.getBoundingClientRect();
+        var margin = Math.max(30, r.height * 0.15);
+        if (r.top < vh - margin && r.bottom > 0) {
+          el.classList.add('in');
+          return false;
+        }
+        return true;
       });
     }
+    window.addEventListener('scroll', checkReveals, { passive: true });
+    window.addEventListener('resize', checkReveals, { passive: true });
+    window.addEventListener('load', checkReveals, { passive: true });
+    window.addEventListener('pageshow', checkReveals, { passive: true });
+    checkReveals();
+    /* 兜底:某些环境滚动事件不可靠,2s/5s 后再补两次(仅对已进入视口的元素生效) */
+    setTimeout(checkReveals, 2000);
+    setTimeout(checkReveals, 5000);
   }
 
   // 3. 卡片光晕跟随鼠标（reasonix doc-card 效果）

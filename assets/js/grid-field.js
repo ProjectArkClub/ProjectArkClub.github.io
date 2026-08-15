@@ -1,12 +1,13 @@
 /* ProjectArk 首页 Hero 互动点阵 —— 借鉴 DeepSeek 官网 hero 背景(2026-08 分析落地)
    - 90px 网格点 + 弹簧回位 + 鼠标斥力 + 近邻连线
-   - 30fps 节流 / DPR≤2 / 离屏暂停 / 静止自动停帧 / 触屏禁用 */
+   - 30fps 节流 / DPR≤2 / 离屏暂停 / 静止自动停帧 */
 (function () {
   'use strict';
 
   var canvas = document.querySelector('.hero-field');
   if (!canvas || !canvas.getContext) return;
-  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+  /* 注:不再因 touch/粗指针退出——远程桌面(如向日葵)常报告 coarse pointer,
+     会导致点阵完全不渲染;触屏设备只是不跟手,图案照常显示(DS 同策略) */
 
   var ctx = canvas.getContext('2d');
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -123,16 +124,7 @@
     rto = setTimeout(function () { rebuild(); wake(); }, 150);   /* 150ms 防抖重建网格 */
   }, { passive: true });
 
-  var io = new IntersectionObserver(function (entries) {
-    if (entries[0].isIntersecting) {
-      wake();
-    } else {
-      running = false;
-      cancelAnimationFrame(raf);
-    }
-  }, { threshold: 0 });
-
+  /* IO 离屏暂停已停用（远程桌面环境可能误报非交叉导致不渲染；之后按需恢复） */
   rebuild();
-  io.observe(canvas);
   wake();
 })();

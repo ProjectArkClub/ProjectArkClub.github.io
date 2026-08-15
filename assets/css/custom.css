@@ -156,6 +156,19 @@ body {
   transition: background 0.15s, transform 0.1s;
 }
 .btn-download:hover { background: var(--primary-dark); transform: translateY(-1px); }
+/* 压过主题 a:hover 下划线：按钮式链接（立即下载 / 导航下载 CTA / 通用链接按钮）任何状态不带下划线 */
+.btn-download:hover,
+.btn-download:focus,
+.btn-download:active,
+.btn-download:visited,
+.nav-cta:hover,
+.nav-cta:focus,
+.nav-cta:active,
+.nav-cta:visited,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:active,
+.btn-link:visited { text-decoration: none; }
 
 /* ── 功能卡片网格 ────────────────────────────────────── */
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
@@ -179,6 +192,83 @@ body {
   font-size: 13px;
 }
 .site-footer p { margin: 4px 0; }
+
+/* 页尾联系方式（DS 页尾式三栏：左 头像右侧两行(Telegram·QQ / 🎁邀请说明)｜中 版权｜右 政策链接；
+   hero「查看邀请方式」锚点落点） */
+.foot-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 20px 8px;
+  scroll-margin-top: 90px;
+}
+.foot-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.foot-left-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+.foot-contact-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.foot-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;   /* 圆角方形:与站点圆角矩形语汇(按钮 14px/卡片)一致 */
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 0;
+}
+.foot-link {
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.foot-link:hover { opacity: 0.7; text-decoration: none; }   /* 与右侧政策链接同款:白字 hover 变暗 */
+.foot-contact .foot-link { color: #fff; }   /* 压过 .main-content a 的 primary-dark */
+.foot-sep { color: var(--text-3); }
+.foot-gift {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text-3);
+}
+.foot-policy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12.5px;
+}
+.foot-policy a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.foot-policy a:hover { opacity: 0.7; }   /* DS 政策链接 hover 同款:变暗而非下划线 */
+/* 宽屏:DS 同款三栏页尾,窄屏退化居中列 */
+@media (min-width: 900px) {
+  .foot-contact {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    padding: 10px 20px 12px;
+  }
+  .foot-left { grid-column: 1; grid-row: 1; justify-self: start; }
+  .foot-contact .copyright { grid-column: 2; grid-row: 1; justify-self: center; margin: 0; }
+  .foot-policy { grid-column: 3; grid-row: 1; justify-self: end; }
+}
 
 /* ── 响应式 ──────────────────────────────────────────── */
 @media (max-width: 720px) {
@@ -539,6 +629,12 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   box-shadow: none;
 }
 .btn-dl:hover { background: var(--primary-dark); transform: translateY(-1px); }
+/* 压过主题 a:hover 下划线：下载按钮任何状态（悬停/按下/聚焦）都不出下划线 */
+.btn-dl:hover,
+.btn-dl:focus,
+.btn-dl:focus-visible,
+.btn-dl:active,
+.btn-dl:visited { text-decoration: none; }
 
 /* 下载双卡 + 通用信息行 */
 .dl-grid {
@@ -1060,25 +1156,70 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   opacity: 0.85;
 }
 
-/* 底部大 CTA（卡内流动背景 + 联系方式合并） */
+/* 底部大 CTA（对齐 DS「插件生态」区块：开敞 section，无卡片壳） */
 .cta-final {
   position: relative;
   overflow: hidden;
-  margin: 52px 0 8px;
-  border-radius: 16px;
-  border: 1px solid rgba(79, 157, 255, 0.3);
-  background: linear-gradient(180deg, #0e1e3a 0%, #0a1424 70%, #0d1117 100%);
-  box-shadow: var(--shadow-2);
+  margin: 48px 0 8px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
   text-align: center;
   scroll-margin-top: 90px;
+  min-height: min(60vh, 720px);          /* DS 原值 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.cta-final canvas.fluid-bg {
+/* 中央粒子层（DS CtaDigitileR3F 层：-inset-30% + screen 混合 + 椭圆径向 mask + translateY(-8%)） */
+.cta-scene {
+  position: absolute;
+  inset: -30%;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transform: translateY(-8%);
+  -webkit-mask: radial-gradient(ellipse 60% 60% at center, #000 0%, transparent 70%);
+  mask: radial-gradient(ellipse 60% 60% at center, #000 0%, transparent 70%);
+}
+.cta-scene .cta-logo-field {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.6;
 }
+/* 点阵带（DS：top 80px 高 500px，带内四边渐隐）+ 底部三光斑 */
+.cta-dots-wrap {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  z-index: 0;
+  pointer-events: none;
+}
+.cta-dots-mask {
+  position: absolute;
+  inset: 0;
+  -webkit-mask: linear-gradient(to bottom, transparent 0, #000 20%, #000 80%, transparent 100%),
+                linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask: linear-gradient(to bottom, transparent 0, #000 20%, #000 80%, transparent 100%),
+        linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%);
+  mask-composite: intersect;
+}
+.cta-dots-mask .cta-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.cta-dots-wrap span { position: absolute; border-radius: 50%; }
+.cta-dots-wrap .g1 { left: 10%; bottom: -100px; width: 500px; height: 500px; opacity: 0.3; background: radial-gradient(circle, #1A3870 0%, transparent 70%); filter: blur(80px); }
+.cta-dots-wrap .g2 { left: 50%; transform: translateX(-50%); bottom: -50px; width: 700px; height: 400px; opacity: 0.4; background: radial-gradient(ellipse at center, #2D5F9E 0%, #1A3870 40%, transparent 70%); filter: blur(100px); }
+.cta-dots-wrap .g3 { right: 10%; bottom: -80px; width: 400px; height: 400px; opacity: 0.2; background: radial-gradient(circle, #4A8AC4 0%, #2D5F9E 30%, transparent 70%); filter: blur(60px); }
 .cta-inner {
   position: relative;
   z-index: 1;
@@ -1086,7 +1227,99 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  padding: 64px 32px 44px;
+  padding: 64px 32px;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+/* 主按钮图标（DS 按钮同款 15px currentColor 图标） */
+.btn-dl .btn-dl-icon {
+  display: inline-block;
+  margin-right: 7px;
+  vertical-align: -2px;
+}
+/* 修复运行库文字行：DS caption 级三级信息，链接式收容（无卡片/无折叠） */
+.cta-fix {
+  margin: 4px 0 0;
+  max-width: 652px;
+  font-size: 13px;
+  line-height: 2;
+  color: var(--text-3);
+}
+.cta-fix a {
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+.cta-fix a:hover { border-bottom-color: var(--primary); }
+/* 下载枢纽按钮 v3：短文案 + 说明小字内嵌 + 边框徽章；仅作用于首页 .cta-actions，
+   /release 页仍用旧的单行 .btn-dl */
+.cta-actions .btn-dl {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 9px 18px 8px;
+  border-radius: 14px;
+  min-width: 118px;
+  line-height: 1.3;
+}
+.cta-actions .btn-dl .btn-dl-icon { flex-shrink: 0; margin-right: 0; vertical-align: baseline; }
+.cta-actions .btn-dl-label { display: flex; flex-direction: column; align-items: flex-start; }
+.cta-actions .btn-dl-main { font-size: 13.5px; font-weight: 600; }
+.cta-actions .btn-dl-sub { font-size: 10.5px; font-weight: 400; opacity: 0.68; margin-top: 1px; }
+/* 「推荐」徽章：白底蓝字，骑在按钮顶边框上（不占按钮内部空间）；9px 小字保证与主文案留足间距 */
+.cta-actions .dl-badge-cta {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: #fff;
+  color: #2f7fe0;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: 0 1px 4px rgba(13, 43, 46, 0.3);
+  pointer-events: none;
+}
+/* 主按钮 hover 柔光圈（呼应鲸鱼光斑） */
+.cta-actions .btn-dl:not(.btn-dl--beta):not(.btn-dl--ghost):hover {
+  box-shadow: var(--shadow), 0 0 0 3px rgba(79, 157, 255, 0.14), 0 0 22px rgba(79, 157, 255, 0.28);
+}
+/* Beta：白字蓝系幽灵（亮蓝边，去呼吸点；与正式版同族、比兼容版亮一档） */
+.cta-actions .btn-dl--beta {
+  color: #fff !important;
+  border-color: rgba(79, 157, 255, 0.5);
+  background: transparent;
+  box-shadow: none;
+}
+.cta-actions .btn-dl--beta:hover,
+.cta-actions .btn-dl--beta:focus-visible {
+  background: rgba(79, 157, 255, 0.12);
+  border-color: #4f9dff;
+}
+/* 兼容版：白字深蓝系幽灵（柔蓝灰边，对应「旧系统」） */
+.cta-actions .btn-dl--ghost {
+  color: #fff !important;
+  border-color: rgba(140, 165, 200, 0.35);
+  background: transparent;
+  box-shadow: none;
+}
+.cta-actions .btn-dl--ghost:hover {
+  background: rgba(140, 165, 200, 0.08);
+  border-color: rgba(140, 165, 200, 0.55);
+}
+@media (max-width: 620px) {
+  .cta-actions .btn-dl { flex: 0 1 auto; width: 100%; max-width: 300px; padding: 9px 16px; }
 }
 .cta-final h2 {
   margin: 0;
@@ -1251,3 +1484,148 @@ h2, h3, a[id] { scroll-margin-top: 72px; }
   background: linear-gradient(180deg, rgba(79, 157, 255, 0.16), rgba(22, 27, 34, 0.5) 80%);
   border-color: rgba(79, 157, 255, 0.35);
 }
+
+/* 入场对齐 DS framer：内容块(上移+blur 0.6s)与点阵带(淡入+scale 1.2s)各自独立；
+   粒子层(.cta-scene)不参与入场(DS layer1 同款) */
+.cta-inner.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(10px);
+  transition: opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+              transform 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+              filter 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.cta-inner.reveal.in { opacity: 1; transform: none; filter: blur(0); }
+.cta-dots-wrap.reveal {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 1.2s cubic-bezier(0.33, 1, 0.68, 1),
+              transform 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.cta-dots-wrap.reveal.in { opacity: 1; transform: scale(1); }
+
+/* ============================================================
+   hero 背景 logo 光扫（对标 DS harness 鲸鱼 lightParams）
+   ============================================================ */
+.hero-logo-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;          /* 在流体/点阵之上（DOM 靠后），内容(hero-inner z-1)之下 */
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: logo-breathe 4.5s ease-in-out infinite;   /* 暗态呼吸（DS 鲸鱼 bob 的低频版） */
+}
+@keyframes logo-breathe {
+  0%, 100% { opacity: 0.75; }
+  50%      { opacity: 1; }
+}
+/* 移动端隐藏已停用（站主意愿：全尺寸显示，之后再按需恢复） */
+
+/* ============================================================
+   404 页（对齐 DS 404 结构：大号 404 + 三行诗 + 返回按钮；
+   背景复用下载枢纽鲸鱼粒子层，gather 缺省时全聚拢）
+   ============================================================ */
+.nf {
+  position: relative;
+  overflow: hidden;
+  min-height: min(80vh, 780px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 24px 90px;   /* 上给悬浮导航留位 */
+  text-align: center;
+}
+.nf-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.nf-code {
+  margin: 0;
+  font-size: clamp(76px, 16vw, 152px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  background: linear-gradient(92deg, #4f9dff 0%, #9ecbff 55%, #6fb0ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nf-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.nf-lines p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-2);
+}
+.nf .btn-dl { margin-top: 4px; }
+/* 404 返回按钮：空心透明（下载枢纽幽灵按钮同款：白字 + 蓝边 + hover 泛蓝） */
+.nf .btn-dl--ghost {
+  color: #fff !important;
+  border-color: rgba(79, 157, 255, 0.5);
+  background: transparent;
+  box-shadow: none;
+}
+.nf .btn-dl--ghost:hover {
+  background: rgba(79, 157, 255, 0.12);
+  border-color: #4f9dff;
+}
+
+/* ============================================================
+   法律文档页（privacy / data-processing）：对齐 DS harness legal-page 排版
+   （正文 16px/1.9、引言 17px、h2 24px、圆点列表 1.4em、链接无下划线变色、
+     section 64px 间距、标题→正文 104px、正文满容器 960）
+   页面用 body_class:home(悬浮胶囊导航/全宽 main/1000px 页脚),内容由 .legal-wrap 居中
+   ============================================================ */
+.legal-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 170px 24px 90px;   /* 顶部避开 fixed 悬浮导航,≈ DS 头部 216px 的等比 */
+}
+.legal-head { padding-bottom: 104px; }         /* DS legal-page-header pb-104px */
+.legal-head h1 {
+  margin: 0;
+  border-bottom: none;
+  font-size: clamp(34px, 6vw, 60px);           /* DS text-[38px] md:text-[60px] */
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--heading) !important;
+}
+.legal-doc {
+  color: var(--text-2);
+  font-size: 16px;
+  line-height: 1.9;
+}
+.legal-intro { font-size: 17px; color: var(--heading); }
+.legal-doc section { padding-top: 64px; scroll-margin-top: 112px; }   /* DS 原值 */
+.legal-doc .legal-doc-section-untitled { padding-top: 20px; }        /* DS 无标题小节(如 data-processing) */
+.legal-doc h2 {
+  margin: 0 0 20px;
+  border-bottom: none;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.45;
+  color: var(--heading) !important;
+}
+.legal-doc p + p,
+.legal-doc p + ul,
+.legal-doc ul + p { margin-top: 16px; }
+.legal-doc ul { list-style: disc; padding-left: 1.4em; }
+.legal-doc li { padding-left: 0.3em; }
+.legal-doc li + li { margin-top: 8px; }
+.legal-doc a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.legal-doc a:hover { color: #9ecbff; text-decoration: none; }

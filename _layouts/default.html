@@ -30,11 +30,32 @@
       {{ content }}
 
       <footer class="site-footer">
-        <p class="copyright">版权所有 &copy; 2021-{{ site.time | date: '%Y' }} ❖ 保留所有权利</p>
+        <div class="foot-contact" id="contact">
+          <div class="foot-left">
+            <img class="foot-avatar" src="{{ site.cdn }}/resource/me.jpg" width="32" height="32" alt="作者头像">
+            <div class="foot-left-text">
+              <div class="foot-contact-row">
+                <a class="foot-link" href="https://t.me/+0920spznfQZjMjNl" rel="noopener" title="Telegram 联系作者">Telegram</a>
+                <span class="foot-sep" aria-hidden="true">·</span>
+                <a class="foot-link" href="tencent://ntqq-open?subCmd=profile&amp;action=openMiniBuddyProfile&amp;actionParams={&quot;uin&quot;:&quot;1764193802&quot;,&quot;sourceType&quot;:&quot;QrCodeShareBuddyLink&quot;}" rel="noopener" title="QQ 1764193802 · 点击唤起添加好友">QQ</a>
+              </div>
+              <p class="foot-gift">邀请新用户注册 · 领 7 天奖励🎁</p>
+            </div>
+          </div>
+          <p class="copyright">版权所有 &copy; 2021-{{ site.time | date: '%Y' }} ❖ 保留所有权利</p>
+          <nav class="foot-policy" aria-label="政策链接">
+            <a href="/privacy">安全使用政策</a>
+            <span class="foot-sep" aria-hidden="true">·</span>
+            <a href="/data-processing">数据处理说明</a>
+          </nav>
+        </div>
       </footer>
     </main>
     <script src="{{ '/assets/js/fluid-bg.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/grid-field.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/cta-field.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/cta-scene.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/logo-field.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/reveal.js' | relative_url }}"></script>
   </body>
 </html>
