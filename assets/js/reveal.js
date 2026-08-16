@@ -19,7 +19,7 @@
   // 2. 滚动显现（reveal）：卡片/截图/侧栏错峰淡入（hero 由 CSS rise-in 入场，不再参与）
   //    实现为滚动/缩放时的 rect 检查 + load 后兜底定时，不依赖 IntersectionObserver
   //    （Tauri WebView2 等环境曾出现 IO 不触发导致内容永久 opacity:0 的问题）
-  var targets = document.querySelectorAll('.feature, .shot, .dl-card, .fix-card, .cta-inner, .cta-dots-wrap, .nf-inner');
+  var targets = document.querySelectorAll('.feature, .split, .doc-hero, .shot-card, .cta-inner, .cta-dots-wrap, .nf-inner');
   if (targets.length) {
     var pendingReveals = [];
     targets.forEach(function (el, i) {
