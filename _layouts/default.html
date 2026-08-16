@@ -7,12 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0d1117">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/custom.min.css' | relative_url }}">
     {% include head-custom.html %}
   </head>
   <body class="{{ page.body_class }}">
-
-    <a id="skip-to-content" href="#content">跳到内容</a>
 
     <nav class="topbar" role="navigation">
       <button class="sidebar-toggle" aria-label="打开目录">&#9776;</button>
@@ -22,7 +20,7 @@
         <a href="/rpg">RPG教程</a>
       </div>
       <div class="nav-actions">
-        <a class="nav-cta" href="/#download">下载 {{ site.projectArk_version }}</a>
+        <a class="nav-cta" href="/#download" data-event="nav_download">下载 {{ site.projectArk_version }}</a>
       </div>
     </nav>
 
@@ -32,12 +30,12 @@
       <footer class="site-footer">
         <div class="foot-contact" id="contact">
           <div class="foot-left">
-            <img class="foot-avatar" src="{{ site.cdn }}/resource/me.jpg" width="32" height="32" alt="作者头像">
+            <img class="foot-avatar" src="{{ site.cdn }}/resource/me.webp" width="32" height="32" alt="作者头像" loading="lazy" decoding="async">
             <div class="foot-left-text">
               <div class="foot-contact-row">
-                <a class="foot-link" href="https://t.me/+0920spznfQZjMjNl" rel="noopener" title="Telegram 联系作者">Telegram</a>
+                <a class="foot-link" href="https://t.me/+0920spznfQZjMjNl" rel="noopener" data-event="contact" data-contact="telegram" title="Telegram 联系作者">Telegram</a>
                 <span class="foot-sep" aria-hidden="true">·</span>
-                <a class="foot-link" href="tencent://ntqq-open?subCmd=profile&amp;action=openMiniBuddyProfile&amp;actionParams={&quot;uin&quot;:&quot;1764193802&quot;,&quot;sourceType&quot;:&quot;QrCodeShareBuddyLink&quot;}" rel="noopener" title="QQ 1764193802 · 点击唤起添加好友">QQ</a>
+                <a class="foot-link" href="tencent://ntqq-open?subCmd=profile&amp;action=openMiniBuddyProfile&amp;actionParams={&quot;uin&quot;:&quot;1764193802&quot;,&quot;sourceType&quot;:&quot;QrCodeShareBuddyLink&quot;}" rel="noopener" data-event="contact" data-contact="qq" title="QQ 1764193802 · 点击唤起添加好友">QQ</a>
               </div>
               <p class="foot-gift">邀请新用户注册 · 领 7 天奖励🎁</p>
             </div>
@@ -51,11 +49,19 @@
         </div>
       </footer>
     </main>
-    <script src="{{ '/assets/js/fluid-bg.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/grid-field.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/cta-field.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/cta-scene.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/logo-field.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/reveal.js' | relative_url }}"></script>
+    {% if page.effects == 'hero' %}
+    <script src="{{ '/assets/js/fluid-bg.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/grid-field.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/cta-field.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/cta-scene.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/logo-field.min.js' | relative_url }}"></script>
+    {% elsif page.effects == 'scene' %}
+    <script src="{{ '/assets/js/cta-scene.min.js' | relative_url }}"></script>
+    {% endif %}
+    {% if page.body_class == 'docs' %}
+    <script src="{{ '/assets/js/toc.min.js' | relative_url }}"></script>
+    {% endif %}
+    <script src="{{ '/assets/js/reveal.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/analytics.min.js' | relative_url }}"></script>
   </body>
 </html>

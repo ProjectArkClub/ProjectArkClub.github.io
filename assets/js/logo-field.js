@@ -32,7 +32,7 @@
   var running = false, raf = 0, last = 0;
   var img = new Image();
   img.onload = function () { sample(); wake(); };
-  img.src = '/resource/arch1.png';   /* PNG(128px 好帧):避免 ico 内坏掉的 256 帧被浏览器选中 */
+  img.src = '/resource/arch1.webp';   /* WebP(128px, from PNG good frame): avoid broken 256px ICO frame */
 
   function smooth(a, b, x) {
     var t = Math.max(0, Math.min(1, (x - a) / (b - a)));

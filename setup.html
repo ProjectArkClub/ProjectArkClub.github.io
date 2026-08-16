@@ -22,115 +22,78 @@ permalink: /setup
   </ul>
 </aside>
 <div class="doc-body">
-<header class="doc-hero">
-  <span class="doc-kicker">Setup · 安装说明</span>
-  <h1 class="page-h1">安装说明</h1>
-  <p class="doc-lede">从环境准备到首次运行，按下面五个步骤完成安装。截图来自程序实际界面，版本不同时以最新版为准。</p>
-</header>
+<h1 class="page-h1">安装说明</h1>
 
-<section class="split" id="env">
-  <div class="split-copy">
-    <span class="split-num">01</span>
-    <h2>环境设置</h2>
-    <p class="split-lede">先排除运行阻碍，再调整系统缩放，可以避免大部分启动失败和画面识别问题。</p>
-    <ul>
-      <li>卸载非 Windows 的<strong>全部杀毒软件、软件管家</strong>，并将本程序添加至系统防火墙白名单。</li>
-      <li>系统缩放设为 <strong>100%</strong>：<a href="https://jingyan.baidu.com/article/c85b7a642cd5f6413bac95b7.html" rel="noopener">查看设置方法</a>。</li>
-    </ul>
-  </div>
-  <div class="split-media">
-    <div class="callout callout--warn">
-      <span class="ico">!</span>
-      <div><strong>重要</strong>：未按上述方式处理时，程序可能无法运行，或出现找不到窗口、识别偏移等问题。</div>
-    </div>
-  </div>
-</section>
 
-<section class="split split--reverse" id="start">
-  <div class="split-copy">
-    <span class="split-num">02</span>
-    <h2>启动与注册</h2>
-    <p class="split-lede">解压后直接运行，首次使用先完成自助注册，时长会自动到账。</p>
-    <ol>
-      <li>解压本程序至新文件夹中并运行。</li>
-      <li>注册：自助注册，时长自动到账，切忌扫码超时。</li>
-      <li>赞助：到期后请联系作者，时长自动到账。</li>
-      <li>更改：按界面提示修改账号密码。</li>
-      <li>时长查询：查看账号剩余时长。</li>
-    </ol>
-    <div class="callout">
-      <span class="ico">i</span>
-      <div>启动失败：请前往<a href="/#download">下载区域</a>安装全部的修复程序后再次尝试。</div>
-    </div>
-  </div>
-  <div class="split-media">
-    <div class="media-stack">
-      <figure class="shot-card">
-        <img src="{{site.cdn}}/resource/ark_login.png" alt="登录注册界面">
-        <figcaption>登录注册界面</figcaption>
-      </figure>
-      <figure class="shot-card">
-        <img src="{{site.cdn}}/resource/rpg_time.png" alt="时长查询界面">
-        <figcaption>查询剩余时长</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
+<h2 id="env">环境设置</h2>
 
-<section class="split" id="update">
-  <div class="split-copy">
-    <span class="split-num">03</span>
-    <h2>更新</h2>
-    <p class="split-lede">推荐使用程序内自动更新；手动更新时直接覆盖旧文件夹即可。</p>
-    <ul>
-      <li>手动更新：前往<a href="/#download">下载区域</a>下载，覆盖本地文件夹中旧程序完成更新。</li>
-      <li>自动更新：右键屏幕右下角任务栏小图标 - 检查更新。</li>
-    </ul>
-  </div>
-  <figure class="split-media shot-card">
-    <img src="{{site.cdn}}/resource/update.png" alt="更新提示">
-    <figcaption>更新提示</figcaption>
-  </figure>
-</section>
+<div class="callout callout--warn">
+  <span class="ico">!</span>
+  <div><strong>重要</strong>：卸载非 windows 的<strong>全部杀毒软件、软件管家</strong>，并将本程序添加至系统防火墙白名单，否则可能无法运行。</div>
+</div>
 
-<section class="split split--reverse" id="config">
-  <div class="split-copy">
-    <span class="split-num">04</span>
-    <h2>多配置切换</h2>
-    <p class="split-lede">把不同角色或场景的参数存成独立配置，随时切换、互不干扰。</p>
-    <ul>
-      <li>右键图标 - 配置选择 - 配置，点击进入配置目录。</li>
-      <li>新建配置文件即可添加新配置，如 <code>default.json</code>。</li>
-    </ul>
-  </div>
-  <figure class="split-media shot-card">
-    <img src="{{site.cdn}}/resource/set.png" alt="配置切换">
-    <figcaption>多配置切换</figcaption>
-  </figure>
-</section>
+<ul>
+  <li>系统缩放：<a href="https://jingyan.baidu.com/article/c85b7a642cd5f6413bac95b7.html" rel="noopener">设置方法</a> —— 需设为 <strong>100%</strong></li>
+</ul>
 
-<section class="split split--plain" id="hotkey">
-  <div class="split-copy">
-    <span class="split-num">05</span>
-    <h2>快捷键</h2>
-    <p class="split-lede">日常操作可以全部通过托盘图标和快捷键完成。</p>
-    <div class="param-grid">
-      <div class="param-card">
-        <h4>左键小图标</h4>
-        <p>隐藏 / 显示本程序</p>
-      </div>
-      <div class="param-card">
-        <h4>Ctrl-S</h4>
-        <p>保存参数配置</p>
-      </div>
-      <div class="param-card">
-        <h4>Ctrl-W</h4>
-        <p>关闭本程序</p>
-      </div>
-    </div>
-  </div>
-</section>
+<h2 id="start">启动</h2>
+
+<ul>
+  <li>解压本程序至新文件夹中并运行</li>
+  <li>注册：自助注册，时长自动到账，切忌扫码超时</li>
+  <li>赞助：到期后请联系作者，时长自动到账</li>
+  <li>更改：修改账号密码</li>
+</ul>
+
+<figure class="shot">
+  <img src="{{site.cdn}}/resource/ark_login.webp" alt="登录注册界面" loading="lazy" decoding="async" width="302" height="232">
+  <figcaption>登录注册界面</figcaption>
+</figure>
+
+<ul>
+  <li>时长查询</li>
+</ul>
+
+<figure class="shot">
+  <img src="{{site.cdn}}/resource/rpg_time.webp" alt="时长查询界面" loading="lazy" decoding="async" width="321" height="41">
+  <figcaption>查询剩余时长</figcaption>
+</figure>
+
+<div class="callout">
+  <span class="ico">i</span>
+  <div>启动失败：请前往<a href="/#download">下载</a>页面安装全部的修复程序后再次尝试。</div>
+</div>
+
+<h2 id="update">更新</h2>
+
+<ul>
+  <li>手动更新：<a href="/#download">下载页面</a>下载，覆盖本地文件夹中旧程序完成更新</li>
+  <li>自动更新：右键屏幕右下角任务栏小图标 - 检查更新</li>
+</ul>
+
+<figure class="shot">
+  <img src="{{site.cdn}}/resource/update.webp" alt="更新提示" loading="lazy" decoding="async" width="192" height="140">
+  <figcaption>更新提示</figcaption>
+</figure>
+
+<h2 id="config">多配置切换</h2>
+
+<ul>
+  <li>右键图标 - 配置选择 - 配置，点击进入配置目录新建配置文件即可添加新配置（如 "default.json"）</li>
+</ul>
+
+<figure class="shot">
+  <img src="{{site.cdn}}/resource/set.webp" alt="配置切换" loading="lazy" decoding="async" width="274" height="113">
+  <figcaption>多配置切换</figcaption>
+</figure>
+
+<h2 id="hotkey">快捷键</h2>
+
+<ul>
+  <li>左键小图标：隐藏/显示本程序</li>
+  <li>ctrl-s：保存参数配置</li>
+  <li>ctrl-w：关闭本程序</li>
+</ul>
 
 </div>
 </div>
-<script src="{{site.cdn}}/assets/js/toc.js"></script>
