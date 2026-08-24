@@ -1,4 +1,4 @@
-/* ProjectArk 首页 Hero 互动点阵 —— 借鉴 DeepSeek 官网 hero 背景(2026-08 分析落地)
+/* ProjectArk 首页 Hero 互动点阵(2026-08 分析落地)
    - 90px 网格点 + 弹簧回位 + 鼠标斥力 + 近邻连线
    - 30fps 节流 / DPR≤2 / 离屏暂停 / 静止自动停帧 */
 (function () {

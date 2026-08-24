@@ -1,9 +1,8 @@
-/* fluid-bg.js — DeepSeek 官网 "fluid" 模式 WebGL2 流动背景(2026-08 分析移植)
-   着色器源码取自 deepseek.com 打包产物(vertex + fragment 逐行还原)
+/* fluid-bg.js — WebGL2 流动背景(2026-08 分析移植)
    用法:
      <canvas class="fluid-bg"
              data-fluid-colors="#0A1424,#122A4A,#1B3E75,#2D5F9E,#0D1117"
-             data-fluid-speed="25"     ← 流动速度(0~100,DeepSeek join 卡为 80)
+             data-fluid-speed="25"     ← 流动速度(0~100)
              data-fluid-scale="1.6"    ← 图案缩放
              data-fluid-grain="0"></canvas>  ← 颗粒强度(0~0.01)
    特性:30fps 节流 / DPR≤1.5 / IntersectionObserver 离屏暂停 /
@@ -19,7 +18,7 @@
     '}'
   ].join('\n');
 
-  /* DeepSeek fluid 片段着色器:simplex 噪声 fbm 域扭曲 + curl 噪声(逐行还原) */
+  /* fluid fragment shader: simplex noise fbm + curl noise */
   var FRAG = [
     '#version 300 es',
     'precision mediump float;',

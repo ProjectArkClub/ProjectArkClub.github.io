@@ -394,7 +394,7 @@ body {
 /* 抽屉头部（仅窄屏抽屉内显示） */
 .toc-side .drawer-head { display: none; }
 
-/* 窄屏：侧栏抽屉化（对齐 DeepSeek：整屏覆盖 + 顶部导航条） */
+/* 窄屏：侧栏抽屉化（对齐整屏覆盖 + 顶部导航条） */
 @media (max-width: 1023px) {
   body.docs .sidebar-toggle { display: block; }
   .doc-wrap { grid-template-columns: 1fr; gap: 8px; }
@@ -469,7 +469,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
 .hero .hero-sub { color: var(--text-2); }
 
 
-/* 滚动显现（reveal）：参数对齐 DeepSeek 官网（y 40px · 1s · easeInOut） */
+/* 滚动显现（reveal）：滚动显现（y 40px · 1s · easeInOut） */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -647,10 +647,10 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
 }
 
 /* ============================================================
-   DeepSeek 官网动效借鉴（2026-08 分析落地）
+   官网动效借鉴（2026-08 分析落地）
    ============================================================ */
 
-/* 1. Hero 互动点阵背景（canvas 渐隐遮罩，对齐 DeepSeek hero mask） */
+/* 1. Hero 互动点阵背景（canvas 渐隐遮罩，对齐 hero mask） */
 .hero-field {
   position: absolute;
   inset: 0;
@@ -665,7 +665,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
 /* 注:不再用 @media (hover:none) 隐藏点阵——JS 已处理触屏场景,
    reduced-motion 下还需渲染静态网格,隐藏会连静态帧一起干掉 */
 
-/* 2. 眉题星标（sparkle 脉冲 + 小星闪烁，参数对齐 DeepSeek） */
+/* 2. 眉题星标（sparkle 脉冲 + 小星闪烁，参数对齐） */
 .sparkle { animation: sparkle-pulse 2.4s ease-in-out infinite; }
 .sparkle .sparkle-sm {
   transform-box: fill-box;
@@ -683,7 +683,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
 
 /* 3. 标题打字光标已移除（用户反馈） */
 
-/* 4. 旋转渐变边框（DeepSeek rotating-border 同款）
+/* 4. 旋转渐变边框（rotating-border 同款）
       仅 CSS.registerProperty 支持的浏览器启用（reveal.js 加 .css-property） */
 .css-property .btn-download { position: relative; }
 .css-property .btn-download::after {
@@ -714,7 +714,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
 /* 5. 动画降级已停用：星标与旋转环始终播放 */
 
 /* ============================================================
-   首页 v2：DeepSeek 同构（全屏流动背景 + 左文右卡 + 序号卡 + 大 CTA）
+   首页 v2：同构（全屏流动背景 + 左文右卡 + 序号卡 + 大 CTA）
    ============================================================ */
 
 /* 首页全幅容器：hero 全屏出血，其余内容回收进容器 */
@@ -744,7 +744,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
   align-items: center;
 }
 
-/* 背景层：fluid 流动 + 点阵双层（结构对齐 DeepSeek hero） */
+/* 背景层：fluid 流动 + 点阵双层（结构对齐 hero） */
 .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(1200px 600px at 70% -10%, rgba(30, 70, 130, 0.25), transparent 60%); }
 .hero-bg canvas.fluid-bg {
   position: absolute;
@@ -756,7 +756,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
   mask: linear-gradient(#000 0%, #000 60%, transparent 100%);
 }
 
-/* 公告眉题：标题上侧（DeepSeek hero 眉题位置），玻璃底 + 星标，随 hero 滚走 */
+/* 公告眉题：标题上侧（hero 眉题位置），玻璃底 + 星标，随 hero 滚走 */
 .hero-announce {
   position: relative;
   z-index: 3;
@@ -778,7 +778,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
 }
 .hero-announce .sparkle { flex: none; margin-top: 4px; }
 
-/* 四级错峰入场（DeepSeek Framer Motion 参数：1s · easeInOut · 级联延迟） */
+/* 四级错峰入场（Framer Motion 参数：1s · easeInOut · 级联延迟） */
 @keyframes rise-in {
   from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: none; }
@@ -805,7 +805,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
   margin-top: 26px;
 }
 
-/* 右侧邀请文字卡（DeepSeek join 卡同构：卡内流动背景 + 上浮 + 背景缩放） */
+/* 右侧邀请文字卡（join 卡同构：卡内流动背景 + 上浮 + 背景缩放） */
 .hero-card {
   position: relative;
   overflow: hidden;
@@ -838,7 +838,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
   padding: 26px 26px 28px;
 }
 .hero-card-kicker {
-  margin-bottom: auto;                 /* 眉题钉顶，主体沉底（DeepSeek join 卡布局） */
+  margin-bottom: auto;                 /* 眉题钉顶，主体沉底（join 卡布局） */
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
@@ -1042,7 +1042,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
   font-weight: normal;
   color: var(--heading) !important;
 }
-/* 移动端：单列 + 隐藏右卡（DeepSeek 同款 md 断点策略） */
+/* 移动端：单列 + 隐藏右卡（同款 md 断点策略） */
 @media (max-width: 860px) {
   .hero { min-height: auto; padding: 110px 0 56px; }
   .hero-inner { grid-template-columns: 1fr; gap: 28px; text-align: center; }
@@ -1055,7 +1055,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
 /* 入场动画降级已停用：rise-in 级联始终播放 */
 
 /* ============================================================
-   导航 v2：对齐 DeepSeek（hero 顶部保护层 + 下划线动效 + 右侧版本/CTA）
+   导航 v2：对齐（hero 顶部保护层 + 下划线动效 + 右侧版本/CTA）
    ============================================================ */
 
 /* hero 顶部保护层已移除：导航全透明后不再需要，白字在暗蓝背景上足够清晰 */
@@ -1078,7 +1078,7 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
 .nav-links a.active::after { transform: scaleX(1); }
 .nav-links a.active { color: #fff; }
 
-/* 导航右侧唯一 CTA：版本并入按钮文案（对应 DeepSeek 的「下载 App」） */
+/* 导航右侧唯一 CTA：版本并入按钮文案（对应「下载 App」） */
 .nav-actions {
   display: flex;
   align-items: center;

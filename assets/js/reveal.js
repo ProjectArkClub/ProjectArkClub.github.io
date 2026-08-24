@@ -1,6 +1,6 @@
 /* ProjectArk 站点动效：滚动显现 + 导航加深 + 卡片光晕 + 窄屏抽屉 */
 (function () {
-  // 0. 特性检测:CSS.registerProperty 可用才启用"旋转渐变边框"(DeepSeek rotating-border 同款)
+  // 0. 特性检测:CSS.registerProperty 可用才启用"旋转渐变边框"(rotating-border 同款)
   if (window.CSS && typeof CSS.registerProperty === 'function') {
     try {
       CSS.registerProperty({ name: '--border-angle', syntax: '<angle>', inherits: false, initialValue: '0deg' });
@@ -97,7 +97,7 @@
   window.addEventListener('resize', fitNav, { passive: true });
   fitNav();
 
-  // 6. 导航当前页高亮（DeepSeek 同款 active 指示，按 pathname 判定）
+  // 6. 导航当前页高亮（同款 active 指示，按 pathname 判定）
   var path = window.location.pathname.replace(/\/+$/, '') || '/';
   document.querySelectorAll('.nav-links a').forEach(function (a) {
     var href = (a.getAttribute('href') || '/').replace(/\/+$/, '') || '/';
