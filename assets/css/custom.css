@@ -1341,3 +1341,20 @@ h2, h3, a[id], section[id] { scroll-margin-top: 72px; }
   box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32);
   transform: translateY(-1px);
 }
+
+/* 更紧致的单一 Windows 下载按钮：胶囊形、短内边距、稍低高度 */
+.cta-actions .btn-dl--windows {
+  min-width: 0;
+  height: 42px;
+  padding: 0 18px;
+  gap: 8px;
+  border-radius: 999px;
+  font-size: 13.5px;
+}
+.cta-actions .btn-dl--windows .btn-dl-icon {
+  width: 17px;
+  height: 17px;
+}
+.cta-actions .btn-dl--windows .btn-dl-label {
+  font-size: 13.5px;
+}
