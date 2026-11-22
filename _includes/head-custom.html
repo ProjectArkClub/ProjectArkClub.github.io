@@ -6,7 +6,24 @@
 {% include head-custom-cloudflare-analytics.html %}
 
 <!-- You can set your favicon here -->
-<link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
+<link id="theme-favicon" rel="icon" type="image/svg+xml"
+      href="{{ '/resource/favicon.svg' | relative_url }}"
+      data-light="{{ '/resource/favicon-light.ico' | relative_url }}"
+      data-dark="{{ '/resource/favicon-dark.ico' | relative_url }}">
+<script>
+(function () {
+  var link = document.getElementById('theme-favicon');
+  if (!link) return;
+  var query = window.matchMedia('(prefers-color-scheme: dark)');
+  function apply() {
+    link.type = 'image/x-icon';
+    link.href = query.matches ? link.dataset.dark : link.dataset.light;
+  }
+  if (query.addEventListener) query.addEventListener('change', apply);
+  else if (query.addListener) query.addListener(apply);
+  apply();
+})();
+</script>
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
 
 <!-- end custom head snippets -->
